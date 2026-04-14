@@ -1,0 +1,790 @@
+2026-04-14 16:28:40.390 +02:00 [INF] User profile is available. Using 'C:\Users\lyr1csan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-14 16:28:40.675 +02:00 [INF] Now listening on: https://localhost:7228
+2026-04-14 16:28:40.677 +02:00 [INF] Now listening on: http://localhost:5219
+2026-04-14 16:28:40.872 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-14 16:28:40.873 +02:00 [INF] Hosting environment: Development
+2026-04-14 16:28:40.874 +02:00 [INF] Content root path: C:\Users\lyr1csan\Documents\Projects\Alexandria-Sea-Leval-Rise-Mitigation\Backend\SeaLevel.Api
+2026-04-14 16:30:14.624 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:14.731 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.756 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:14.768 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:14.787 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 25.87ms
+2026-04-14 16:30:14.792 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.793 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:14.796 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 181.1607ms
+2026-04-14 16:30:14.824 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.873 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:14.873 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:14.870 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:14.895 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:14.896 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:14.906 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:14.907 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 2.2046ms
+2026-04-14 16:30:14.909 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.910 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 117.1086ms
+2026-04-14 16:30:14.977 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.977 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.977 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.977 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:14.999 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:14.999 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:14.999 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:14.999 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:15.106 +02:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.106 +02:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.106 +02:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.106 +02:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.109 +02:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.109 +02:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.110 +02:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:15.111 +02:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-04-14 16:30:16.453 +02:00 [INF] Received HTTP response headers after 1336.2819ms - 200
+2026-04-14 16:30:16.455 +02:00 [INF] Received HTTP response headers after 1343.323ms - 200
+2026-04-14 16:30:16.456 +02:00 [INF] End processing HTTP request after 1352.0519ms - 200
+2026-04-14 16:30:16.457 +02:00 [INF] End processing HTTP request after 1352.4727ms - 200
+2026-04-14 16:30:16.460 +02:00 [INF] Received HTTP response headers after 1344.6661ms - 200
+2026-04-14 16:30:16.461 +02:00 [INF] End processing HTTP request after 1356.5627ms - 200
+2026-04-14 16:30:16.484 +02:00 [INF] Received HTTP response headers after 1371.5148ms - 200
+2026-04-14 16:30:16.486 +02:00 [INF] End processing HTTP request after 1381.615ms - 200
+2026-04-14 16:30:16.496 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.496 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.496 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.496 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.497 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.498 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.499 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:16.500 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.853 +02:00 [INF] Received HTTP response headers after 4351.1065ms - 200
+2026-04-14 16:30:20.854 +02:00 [INF] End processing HTTP request after 4358.6496ms - 200
+2026-04-14 16:30:20.883 +02:00 [INF] Received HTTP response headers after 4372.8719ms - 200
+2026-04-14 16:30:20.884 +02:00 [INF] End processing HTTP request after 4388.5855ms - 200
+2026-04-14 16:30:20.890 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:20.890 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:20.896 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 5893.5921ms
+2026-04-14 16:30:20.897 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 5891.4231ms
+2026-04-14 16:30:20.897 +02:00 [INF] Received HTTP response headers after 4394.6524ms - 200
+2026-04-14 16:30:20.898 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.899 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.900 +02:00 [INF] End processing HTTP request after 4404.8304ms - 200
+2026-04-14 16:30:20.901 +02:00 [INF] Received HTTP response headers after 4399.9038ms - 200
+2026-04-14 16:30:20.903 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:20.902 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:20.902 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:20.903 +02:00 [INF] End processing HTTP request after 4407.8821ms - 200
+2026-04-14 16:30:20.904 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6031.6028ms
+2026-04-14 16:30:20.904 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6030.9782ms
+2026-04-14 16:30:20.907 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 5903.1244ms
+2026-04-14 16:30:20.909 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.909 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.910 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:20.911 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:20.914 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.915 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:20.915 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:20.918 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 5916.7466ms
+2026-04-14 16:30:20.918 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.919 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6048.9558ms
+2026-04-14 16:30:20.921 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:20.922 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.923 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:20.923 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.923 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.927 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:20.927 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6054.186ms
+2026-04-14 16:30:20.929 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.929 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.930 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.930 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:20.933 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.936 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:20.937 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:22.543 +02:00 [INF] Received HTTP response headers after 1608.4748ms - 200
+2026-04-14 16:30:22.545 +02:00 [INF] End processing HTTP request after 1622.069ms - 200
+2026-04-14 16:30:22.546 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:22.549 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1627.3816ms
+2026-04-14 16:30:22.551 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:22.552 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1649.6153ms
+2026-04-14 16:30:22.557 +02:00 [INF] Received HTTP response headers after 1620.8908ms - 200
+2026-04-14 16:30:22.558 +02:00 [INF] End processing HTTP request after 1629.8855ms - 200
+2026-04-14 16:30:22.560 +02:00 [INF] Received HTTP response headers after 1626.497ms - 200
+2026-04-14 16:30:22.560 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:22.561 +02:00 [INF] End processing HTTP request after 1638.2897ms - 200
+2026-04-14 16:30:22.562 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1634.2828ms
+2026-04-14 16:30:22.563 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:22.564 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:22.566 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1645.7801ms
+2026-04-14 16:30:22.567 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1655.7571ms
+2026-04-14 16:30:22.568 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:22.571 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1668.8873ms
+2026-04-14 16:30:22.573 +02:00 [INF] Received HTTP response headers after 1634.9811ms - 200
+2026-04-14 16:30:22.575 +02:00 [INF] End processing HTTP request after 1638.9814ms - 200
+2026-04-14 16:30:22.576 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:22.577 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1641.829ms
+2026-04-14 16:30:22.579 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:22.580 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1658.8702ms
+2026-04-14 16:30:26.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:26.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:26.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:26.009 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:26.012 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:26.013 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:26.015 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:26.017 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:26.017 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:26.017 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:26.018 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:26.019 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:26.025 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.025 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.025 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.025 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.026 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.027 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.027 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:26.030 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:27.793 +02:00 [INF] Received HTTP response headers after 1761.4294ms - 200
+2026-04-14 16:30:27.795 +02:00 [INF] End processing HTTP request after 1768.5446ms - 200
+2026-04-14 16:30:27.796 +02:00 [INF] Received HTTP response headers after 1765.4482ms - 200
+2026-04-14 16:30:27.797 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:27.798 +02:00 [INF] End processing HTTP request after 1773.3987ms - 200
+2026-04-14 16:30:27.799 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1774.1808ms
+2026-04-14 16:30:27.800 +02:00 [INF] Received HTTP response headers after 1771.9948ms - 200
+2026-04-14 16:30:27.800 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:27.801 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:27.801 +02:00 [INF] End processing HTTP request after 1776.7796ms - 200
+2026-04-14 16:30:27.802 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1779.1335ms
+2026-04-14 16:30:27.803 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1794.0461ms
+2026-04-14 16:30:27.804 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:27.805 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:27.807 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1785.6327ms
+2026-04-14 16:30:27.808 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1799.3787ms
+2026-04-14 16:30:27.810 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:27.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1803.5912ms
+2026-04-14 16:30:27.819 +02:00 [INF] Received HTTP response headers after 1789.7852ms - 200
+2026-04-14 16:30:27.820 +02:00 [INF] End processing HTTP request after 1794.9669ms - 200
+2026-04-14 16:30:27.821 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:27.822 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1801.0865ms
+2026-04-14 16:30:27.822 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:27.823 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1814.098ms
+2026-04-14 16:30:29.836 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:29.836 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/chat/metrics - null null
+2026-04-14 16:30:29.838 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.840 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api)'
+2026-04-14 16:30:29.840 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:29.843 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:29.844 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.6251ms
+2026-04-14 16:30:29.845 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.846 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 9.8089ms
+2026-04-14 16:30:29.846 +02:00 [INF] Route matched with {action = "GetMetrics", controller = "Chat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Chat.ChatMetricItem]]] GetMetrics(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.ChatController (SeaLevel.Api).
+2026-04-14 16:30:29.847 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:29.851 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.851 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:29.852 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast/quick
+2026-04-14 16:30:29.853 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:29.853 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast/quick
+2026-04-14 16:30:29.854 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.5433ms
+2026-04-14 16:30:29.856 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.857 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 9.8606ms
+2026-04-14 16:30:29.872 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:29.875 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.876 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:29.876 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:29.876 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:29.877 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:29.878 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.879 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.883 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.883 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:29.884 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.884 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:29.885 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:29.885 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:29.888 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.889 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.890 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.891 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.892 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:29.893 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.412 +02:00 [INF] Received HTTP response headers after 1525.8092ms - 200
+2026-04-14 16:30:31.413 +02:00 [INF] End processing HTTP request after 1535.6822ms - 200
+2026-04-14 16:30:31.415 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:31.417 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1539.4573ms
+2026-04-14 16:30:31.418 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.419 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1547.3195ms
+2026-04-14 16:30:31.422 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:31.426 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.427 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:31.429 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.430 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.454 +02:00 [INF] Received HTTP response headers after 1560.0207ms - 200
+2026-04-14 16:30:31.455 +02:00 [INF] Received HTTP response headers after 1599.9169ms - 200
+2026-04-14 16:30:31.455 +02:00 [INF] End processing HTTP request after 1567.4367ms - 200
+2026-04-14 16:30:31.457 +02:00 [INF] End processing HTTP request after 1604.3923ms - 200
+2026-04-14 16:30:31.458 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:31.459 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1572.0275ms
+2026-04-14 16:30:31.460 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Chat.ChatMetricItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:31.460 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.462 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1586.0706ms
+2026-04-14 16:30:31.464 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:31.464 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api) in 1615.3824ms
+2026-04-14 16:30:31.468 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.468 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/chat/metrics - null null
+2026-04-14 16:30:31.468 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api)'
+2026-04-14 16:30:31.469 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:31.471 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api)'
+2026-04-14 16:30:31.471 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/chat/metrics - 200 null application/json; charset=utf-8 1635.3148ms
+2026-04-14 16:30:31.472 +02:00 [INF] Received HTTP response headers after 1577.5456ms - 200
+2026-04-14 16:30:31.473 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.473 +02:00 [INF] Route matched with {action = "GetMetrics", controller = "Chat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Chat.ChatMetricItem]]] GetMetrics(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.ChatController (SeaLevel.Api).
+2026-04-14 16:30:31.477 +02:00 [INF] End processing HTTP request after 1587.6568ms - 200
+2026-04-14 16:30:31.478 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.480 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast/quick
+2026-04-14 16:30:31.480 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:31.482 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast/quick
+2026-04-14 16:30:31.483 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1594.122ms
+2026-04-14 16:30:31.485 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.486 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1609.2732ms
+2026-04-14 16:30:31.488 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:31.491 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.492 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:31.495 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.496 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.912 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:31.915 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.916 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:31.917 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:31.919 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.3606ms
+2026-04-14 16:30:31.921 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:31.921 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 8.978ms
+2026-04-14 16:30:31.925 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:31.928 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:31.940 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:31.946 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:31.950 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.457 +02:00 [INF] Received HTTP response headers after 3561.0098ms - 200
+2026-04-14 16:30:33.458 +02:00 [INF] End processing HTTP request after 3567.4741ms - 200
+2026-04-14 16:30:33.459 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:33.461 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 3570.6701ms
+2026-04-14 16:30:33.463 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.464 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 3587.7697ms
+2026-04-14 16:30:33.468 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-04-14 16:30:33.472 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.473 +02:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-04-14 16:30:33.476 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:33.477 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.5413ms
+2026-04-14 16:30:33.479 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.481 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 12.2631ms
+2026-04-14 16:30:33.485 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:33.488 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.489 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:33.492 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.493 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.592 +02:00 [INF] Received HTTP response headers after 2160.8833ms - 200
+2026-04-14 16:30:33.592 +02:00 [INF] Received HTTP response headers after 2108.609ms - 200
+2026-04-14 16:30:33.593 +02:00 [INF] End processing HTTP request after 2163.64ms - 200
+2026-04-14 16:30:33.594 +02:00 [INF] End processing HTTP request after 2113.8557ms - 200
+2026-04-14 16:30:33.595 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:33.595 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Chat.ChatMetricItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-14 16:30:33.596 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2168.0234ms
+2026-04-14 16:30:33.597 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api) in 2118.1523ms
+2026-04-14 16:30:33.598 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.599 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ChatController.GetMetrics (SeaLevel.Api)'
+2026-04-14 16:30:33.600 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2178.1328ms
+2026-04-14 16:30:33.601 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/chat/metrics - 200 null application/json; charset=utf-8 2133.5491ms
+2026-04-14 16:30:33.605 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:33.609 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.610 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:33.612 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.613 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.727 +02:00 [INF] Received HTTP response headers after 2246.0291ms - 200
+2026-04-14 16:30:33.733 +02:00 [INF] End processing HTTP request after 2260.1923ms - 200
+2026-04-14 16:30:33.736 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:33.737 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 2264.417ms
+2026-04-14 16:30:33.741 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.742 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:33.743 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2279.2821ms
+2026-04-14 16:30:33.745 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:33.748 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:33.750 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:33.751 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:34.048 +02:00 [INF] Received HTTP response headers after 2551.2854ms - 200
+2026-04-14 16:30:34.050 +02:00 [INF] End processing HTTP request after 2554.8691ms - 200
+2026-04-14 16:30:34.051 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:34.052 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 2558.2124ms
+2026-04-14 16:30:34.053 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:34.054 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2566.4215ms
+2026-04-14 16:30:34.056 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:34.058 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:34.059 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:34.060 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:34.061 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:34.600 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:34.638 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:34.642 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:34.652 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:34.668 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.787 +02:00 [INF] Received HTTP response headers after 3835.6453ms - 200
+2026-04-14 16:30:35.788 +02:00 [INF] End processing HTTP request after 3841.5318ms - 200
+2026-04-14 16:30:35.795 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:30:35.801 +02:00 [INF] Received HTTP response headers after 2306.2214ms - 200
+2026-04-14 16:30:35.802 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 3859.9181ms
+2026-04-14 16:30:35.802 +02:00 [INF] End processing HTTP request after 2310.4071ms - 200
+2026-04-14 16:30:35.804 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:35.807 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 3881.7081ms
+2026-04-14 16:30:35.810 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:35.813 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:35.814 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:35.815 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:35.816 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.817 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 2326.0926ms
+2026-04-14 16:30:35.817 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.818 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:35.820 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2335.322ms
+2026-04-14 16:30:35.823 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:35.826 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:35.827 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:35.829 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.830 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.941 +02:00 [INF] Received HTTP response headers after 2326.8769ms - 200
+2026-04-14 16:30:35.943 +02:00 [INF] End processing HTTP request after 2330.1342ms - 200
+2026-04-14 16:30:35.945 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:35.947 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2335.0986ms
+2026-04-14 16:30:35.948 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:35.949 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2344.8006ms
+2026-04-14 16:30:35.953 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:35.957 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:35.958 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:35.960 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:35.962 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:36.137 +02:00 [INF] Received HTTP response headers after 2384.219ms - 200
+2026-04-14 16:30:36.140 +02:00 [INF] End processing HTTP request after 2389.6612ms - 200
+2026-04-14 16:30:36.142 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:36.143 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 2393.5663ms
+2026-04-14 16:30:36.147 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:36.148 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2405.8916ms
+2026-04-14 16:30:36.152 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP245&year=2030 - null null
+2026-04-14 16:30:36.155 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:36.156 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:36.158 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:36.159 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:36.416 +02:00 [INF] Received HTTP response headers after 2353.686ms - 200
+2026-04-14 16:30:36.417 +02:00 [INF] End processing HTTP request after 2356.4073ms - 200
+2026-04-14 16:30:36.421 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:36.423 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 2362.7402ms
+2026-04-14 16:30:36.425 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:36.426 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2370.5591ms
+2026-04-14 16:30:36.431 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:36.444 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:36.445 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:36.449 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:36.451 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:37.298 +02:00 [INF] Received HTTP response headers after 2627.5138ms - 200
+2026-04-14 16:30:37.299 +02:00 [INF] End processing HTTP request after 2647.0113ms - 200
+2026-04-14 16:30:37.302 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:37.304 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2652.4331ms
+2026-04-14 16:30:37.307 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:37.308 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 2708.1094ms
+2026-04-14 16:30:37.312 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:37.315 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:37.316 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:37.318 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:37.319 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.420 +02:00 [INF] Received HTTP response headers after 2600.8333ms - 200
+2026-04-14 16:30:38.421 +02:00 [INF] End processing HTTP request after 2605.3031ms - 200
+2026-04-14 16:30:38.422 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:38.424 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 2608.7128ms
+2026-04-14 16:30:38.425 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.426 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 2615.9502ms
+2026-04-14 16:30:38.430 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:38.433 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.434 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:38.435 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.436 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.467 +02:00 [INF] Received HTTP response headers after 2503.8304ms - 200
+2026-04-14 16:30:38.468 +02:00 [INF] End processing HTTP request after 2507.7406ms - 200
+2026-04-14 16:30:38.470 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:38.471 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 2511.2587ms
+2026-04-14 16:30:38.472 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.473 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 2519.9358ms
+2026-04-14 16:30:38.476 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:38.478 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.479 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:38.480 +02:00 [INF] Received HTTP response headers after 2648.213ms - 200
+2026-04-14 16:30:38.481 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.481 +02:00 [INF] End processing HTTP request after 2651.8373ms - 200
+2026-04-14 16:30:38.482 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.483 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:38.485 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 2655.9181ms
+2026-04-14 16:30:38.486 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.487 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 2663.3652ms
+2026-04-14 16:30:38.489 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:38.491 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.492 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:38.494 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.495 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.791 +02:00 [INF] Received HTTP response headers after 2631.6293ms - 200
+2026-04-14 16:30:38.793 +02:00 [INF] End processing HTTP request after 2635.1138ms - 200
+2026-04-14 16:30:38.794 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:30:38.796 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 2638.8184ms
+2026-04-14 16:30:38.797 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:38.799 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 2647.1984ms
+2026-04-14 16:30:38.803 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2030 - null null
+2026-04-14 16:30:38.807 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:38.808 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:38.810 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:38.811 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:39.127 +02:00 [INF] Received HTTP response headers after 2674.5225ms - 200
+2026-04-14 16:30:39.128 +02:00 [INF] End processing HTTP request after 2679.0882ms - 200
+2026-04-14 16:30:39.130 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:30:39.131 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 2684.3022ms
+2026-04-14 16:30:39.133 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:39.134 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2702.6426ms
+2026-04-14 16:30:39.137 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP585&year=2030 - null null
+2026-04-14 16:30:39.140 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:39.141 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:39.142 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:39.143 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:39.584 +02:00 [INF] Received HTTP response headers after 2264.4857ms - 200
+2026-04-14 16:30:39.586 +02:00 [INF] End processing HTTP request after 2267.7266ms - 200
+2026-04-14 16:30:39.588 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:39.590 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 2272.5854ms
+2026-04-14 16:30:39.591 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:39.592 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2279.9529ms
+2026-04-14 16:30:39.597 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2030 - null null
+2026-04-14 16:30:39.600 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:39.601 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:39.607 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:39.609 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.604 +02:00 [INF] Received HTTP response headers after 2166.6599ms - 200
+2026-04-14 16:30:40.605 +02:00 [INF] End processing HTTP request after 2169.9154ms - 200
+2026-04-14 16:30:40.611 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:40.612 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2177.2552ms
+2026-04-14 16:30:40.614 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.615 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2185.3929ms
+2026-04-14 16:30:40.618 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2030 - null null
+2026-04-14 16:30:40.620 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.621 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:40.623 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.624 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.700 +02:00 [INF] Received HTTP response headers after 2215.8769ms - 200
+2026-04-14 16:30:40.701 +02:00 [INF] End processing HTTP request after 2220.4488ms - 200
+2026-04-14 16:30:40.702 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:40.703 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 2223.2736ms
+2026-04-14 16:30:40.705 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.706 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2230.2901ms
+2026-04-14 16:30:40.709 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP585&year=2030 - null null
+2026-04-14 16:30:40.711 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:40.712 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:40.714 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.714 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.901 +02:00 [INF] Received HTTP response headers after 2088.2219ms - 200
+2026-04-14 16:30:40.902 +02:00 [INF] End processing HTTP request after 2092.155ms - 200
+2026-04-14 16:30:40.904 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:40.905 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2095.5479ms
+2026-04-14 16:30:40.906 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.907 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 2104.4182ms
+2026-04-14 16:30:40.911 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - null null
+2026-04-14 16:30:40.913 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.914 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:40.916 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.917 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:40.956 +02:00 [INF] Received HTTP response headers after 2460.4865ms - 200
+2026-04-14 16:30:40.957 +02:00 [INF] End processing HTTP request after 2463.1068ms - 200
+2026-04-14 16:30:40.958 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:40.959 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 2465.6601ms
+2026-04-14 16:30:40.960 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:40.961 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 2471.7608ms
+2026-04-14 16:30:41.147 +02:00 [INF] Received HTTP response headers after 2003.0006ms - 200
+2026-04-14 16:30:41.149 +02:00 [INF] End processing HTTP request after 2006.2884ms - 200
+2026-04-14 16:30:41.150 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:41.151 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 2009.2226ms
+2026-04-14 16:30:41.152 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:41.153 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 2016.1331ms
+2026-04-14 16:30:41.377 +02:00 [INF] Received HTTP response headers after 1766.7733ms - 200
+2026-04-14 16:30:41.378 +02:00 [INF] End processing HTTP request after 1770.6457ms - 200
+2026-04-14 16:30:41.380 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:41.381 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1774.6609ms
+2026-04-14 16:30:41.382 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:41.382 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 1785.3996ms
+2026-04-14 16:30:41.977 +02:00 [INF] Received HTTP response headers after 1261.7423ms - 200
+2026-04-14 16:30:41.977 +02:00 [INF] End processing HTTP request after 1263.7675ms - 200
+2026-04-14 16:30:41.978 +02:00 [INF] Received HTTP response headers after 1353.6121ms - 200
+2026-04-14 16:30:41.978 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:30:41.979 +02:00 [INF] End processing HTTP request after 1356.1458ms - 200
+2026-04-14 16:30:41.980 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 1266.2232ms
+2026-04-14 16:30:41.981 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:41.982 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:41.983 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1360.2677ms
+2026-04-14 16:30:41.983 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 1274.356ms
+2026-04-14 16:30:41.984 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:41.987 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 1368.9118ms
+2026-04-14 16:30:42.028 +02:00 [INF] Received HTTP response headers after 1110.0357ms - 200
+2026-04-14 16:30:42.028 +02:00 [INF] End processing HTTP request after 1112.7399ms - 200
+2026-04-14 16:30:42.029 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:42.030 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1114.7221ms
+2026-04-14 16:30:42.031 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:42.032 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP126&year=2030 - 200 null application/json; charset=utf-8 1120.6729ms
+2026-04-14 16:30:45.418 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-04-14 16:30:45.419 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP585&year=2100 - null null
+2026-04-14 16:30:45.420 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-04-14 16:30:45.420 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - null null
+2026-04-14 16:30:45.421 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:45.422 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:45.423 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:45.425 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:45.425 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:45.426 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:45.427 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:45.427 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:45.428 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.430 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.433 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.432 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.433 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.431 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.435 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.437 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.440 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP585&year=2100 - null null
+2026-04-14 16:30:45.442 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:45.443 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:45.444 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:45.445 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:47.027 +02:00 [INF] Received HTTP response headers after 1581.1563ms - 200
+2026-04-14 16:30:47.028 +02:00 [INF] End processing HTTP request after 1584.0225ms - 200
+2026-04-14 16:30:47.030 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:30:47.031 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 1586.5543ms
+2026-04-14 16:30:47.032 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:47.033 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 1592.8969ms
+2026-04-14 16:30:47.039 +02:00 [INF] Received HTTP response headers after 1605.0828ms - 200
+2026-04-14 16:30:47.040 +02:00 [INF] End processing HTTP request after 1610.45ms - 200
+2026-04-14 16:30:47.041 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:30:47.042 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1612.4209ms
+2026-04-14 16:30:47.043 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:47.044 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 1625.1442ms
+2026-04-14 16:30:47.066 +02:00 [INF] Received HTTP response headers after 1628.3753ms - 200
+2026-04-14 16:30:47.067 +02:00 [INF] End processing HTTP request after 1634.4598ms - 200
+2026-04-14 16:30:47.068 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:30:47.068 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1636.3152ms
+2026-04-14 16:30:47.069 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:47.070 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 1650.2617ms
+2026-04-14 16:30:47.072 +02:00 [INF] Received HTTP response headers after 1633.4112ms - 200
+2026-04-14 16:30:47.073 +02:00 [INF] End processing HTTP request after 1641.9113ms - 200
+2026-04-14 16:30:47.077 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:30:47.078 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1647.5059ms
+2026-04-14 16:30:47.079 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:47.080 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 1660.4003ms
+2026-04-14 16:30:47.133 +02:00 [INF] Received HTTP response headers after 1697.2579ms - 200
+2026-04-14 16:30:47.134 +02:00 [INF] End processing HTTP request after 1705.16ms - 200
+2026-04-14 16:30:47.135 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:30:47.136 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1707.3161ms
+2026-04-14 16:30:47.136 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:47.137 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 1718.5605ms
+2026-04-14 16:30:57.574 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - null null
+2026-04-14 16:30:57.574 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - null null
+2026-04-14 16:30:57.574 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - null null
+2026-04-14 16:30:57.574 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - null null
+2026-04-14 16:30:57.576 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:30:57.578 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:30:57.579 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:30:57.581 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:30:57.582 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:30:57.583 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:30:57.584 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:30:57.585 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:30:57.586 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.587 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.588 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.589 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.589 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.590 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.591 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.591 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.599 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP370&year=2100 - null null
+2026-04-14 16:30:57.601 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:30:57.601 +02:00 [INF] Route matched with {action = "GetCharts", controller = "Analytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse]] GetCharts(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.AnalyticsController (SeaLevel.Api).
+2026-04-14 16:30:57.603 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:30:57.603 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:00.992 +02:00 [INF] Received HTTP response headers after 3400.3259ms - 200
+2026-04-14 16:31:00.993 +02:00 [INF] End processing HTTP request after 3407.1552ms - 200
+2026-04-14 16:31:00.994 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:31:00.995 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 3409.1621ms
+2026-04-14 16:31:00.996 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:00.997 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3422.4777ms
+2026-04-14 16:31:01.093 +02:00 [INF] Received HTTP response headers after 3499.4003ms - 200
+2026-04-14 16:31:01.094 +02:00 [INF] End processing HTTP request after 3506.0685ms - 200
+2026-04-14 16:31:01.095 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:31:01.096 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 3508.7796ms
+2026-04-14 16:31:01.098 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:31:01.100 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3525.441ms
+2026-04-14 16:31:01.125 +02:00 [INF] Received HTTP response headers after 3530.7498ms - 200
+2026-04-14 16:31:01.126 +02:00 [INF] Received HTTP response headers after 3532.8904ms - 200
+2026-04-14 16:31:01.126 +02:00 [INF] End processing HTTP request after 3537.017ms - 200
+2026-04-14 16:31:01.127 +02:00 [INF] End processing HTTP request after 3539.7555ms - 200
+2026-04-14 16:31:01.128 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:31:01.128 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:31:01.129 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 3540.3384ms
+2026-04-14 16:31:01.130 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 3543.3455ms
+2026-04-14 16:31:01.131 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:01.132 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:31:01.133 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3558.546ms
+2026-04-14 16:31:01.134 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3559.6749ms
+2026-04-14 16:31:01.146 +02:00 [INF] Received HTTP response headers after 3542.3527ms - 200
+2026-04-14 16:31:01.147 +02:00 [INF] End processing HTTP request after 3544.3704ms - 200
+2026-04-14 16:31:01.148 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Analytics.AnalyticsChartsResponse'.
+2026-04-14 16:31:01.149 +02:00 [INF] Executed action SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api) in 3546.2553ms
+2026-04-14 16:31:01.150 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.AnalyticsController.GetCharts (SeaLevel.Api)'
+2026-04-14 16:31:01.150 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/analytics/charts?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3551.6898ms
+2026-04-14 16:31:18.344 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:18.344 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:18.347 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:18.348 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:18.349 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:31:18.349 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:31:18.351 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:18.352 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:18.353 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:18.354 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:21.218 +02:00 [INF] Received HTTP response headers after 2862.4991ms - 200
+2026-04-14 16:31:21.219 +02:00 [INF] End processing HTTP request after 2866.035ms - 200
+2026-04-14 16:31:21.220 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:31:21.221 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 2868.4176ms
+2026-04-14 16:31:21.222 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:21.222 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 2878.5406ms
+2026-04-14 16:31:21.223 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:21.226 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:21.227 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:31:21.228 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:21.229 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:21.256 +02:00 [INF] Received HTTP response headers after 2902.0797ms - 200
+2026-04-14 16:31:21.257 +02:00 [INF] End processing HTTP request after 2905.6936ms - 200
+2026-04-14 16:31:21.258 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:31:21.259 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 2908.1625ms
+2026-04-14 16:31:21.260 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:21.261 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 2917.2672ms
+2026-04-14 16:31:21.263 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:21.265 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:21.266 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:31:21.268 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:21.268 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:21.991 +02:00 [INF] Received HTTP response headers after 761.7544ms - 200
+2026-04-14 16:31:21.992 +02:00 [INF] End processing HTTP request after 763.7704ms - 200
+2026-04-14 16:31:21.993 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:31:21.994 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 765.5473ms
+2026-04-14 16:31:21.995 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:21.996 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 772.1439ms
+2026-04-14 16:31:22.001 +02:00 [INF] Received HTTP response headers after 731.5446ms - 200
+2026-04-14 16:31:22.001 +02:00 [INF] End processing HTTP request after 733.902ms - 200
+2026-04-14 16:31:22.002 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:31:22.003 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 735.8187ms
+2026-04-14 16:31:22.004 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:22.005 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 741.3161ms
+2026-04-14 16:31:28.593 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/reports/statistics?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:28.596 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:28.597 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:28.596 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api)'
+2026-04-14 16:31:28.596 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:28.596 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:28.601 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:28.603 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:28.606 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:31:28.608 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:31:28.609 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:31:28.609 +02:00 [INF] Route matched with {action = "GetStatistics", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Reports.ReportStatisticsResponse]] GetStatistics(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.ReportsController (SeaLevel.Api).
+2026-04-14 16:31:28.610 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:31:28.610 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:31:28.611 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:31:28.612 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.614 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.614 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.615 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.615 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.616 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.616 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.617 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.618 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:28.618 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.191 +02:00 [INF] Received HTTP response headers after 3567.9758ms - 200
+2026-04-14 16:31:32.192 +02:00 [INF] End processing HTTP request after 3577.4885ms - 200
+2026-04-14 16:31:32.193 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:31:32.195 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 3580.906ms
+2026-04-14 16:31:32.197 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.198 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3602.0094ms
+2026-04-14 16:31:32.201 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:32.206 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.207 +02:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-04-14 16:31:32.209 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.211 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.250 +02:00 [INF] Received HTTP response headers after 3625.54ms - 200
+2026-04-14 16:31:32.252 +02:00 [INF] End processing HTTP request after 3636.3097ms - 200
+2026-04-14 16:31:32.253 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:31:32.254 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 3638.7615ms
+2026-04-14 16:31:32.255 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.256 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3660.0493ms
+2026-04-14 16:31:32.258 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:32.261 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.262 +02:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-04-14 16:31:32.263 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.264 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.268 +02:00 [INF] Received HTTP response headers after 3648.3283ms - 200
+2026-04-14 16:31:32.268 +02:00 [INF] End processing HTTP request after 3656.375ms - 200
+2026-04-14 16:31:32.269 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:31:32.270 +02:00 [INF] Received HTTP response headers after 3649.9632ms - 200
+2026-04-14 16:31:32.270 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 3658.4998ms
+2026-04-14 16:31:32.270 +02:00 [INF] Received HTTP response headers after 3646.6305ms - 200
+2026-04-14 16:31:32.271 +02:00 [INF] End processing HTTP request after 3657.3115ms - 200
+2026-04-14 16:31:32.272 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.273 +02:00 [INF] End processing HTTP request after 3658.035ms - 200
+2026-04-14 16:31:32.273 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:32.273 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:31:32.274 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3677.7637ms
+2026-04-14 16:31:32.276 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Reports.ReportStatisticsResponse'.
+2026-04-14 16:31:32.277 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.277 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 3663.7902ms
+2026-04-14 16:31:32.281 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:32.282 +02:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-04-14 16:31:32.283 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.284 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api) in 3671.6927ms
+2026-04-14 16:31:32.285 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:32.287 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.291 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/reports/statistics?scenario=SSP370&year=2100 - null null
+2026-04-14 16:31:32.288 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3690.7508ms
+2026-04-14 16:31:32.289 +02:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-04-14 16:31:32.289 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api)'
+2026-04-14 16:31:32.294 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.296 +02:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api)'
+2026-04-14 16:31:32.299 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.299 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/reports/statistics?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 3706.2879ms
+2026-04-14 16:31:32.301 +02:00 [INF] Route matched with {action = "GetStatistics", controller = "Reports"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Reports.ReportStatisticsResponse]] GetStatistics(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.ReportsController (SeaLevel.Api).
+2026-04-14 16:31:32.302 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.305 +02:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:32.306 +02:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-04-14 16:31:33.903 +02:00 [INF] Received HTTP response headers after 1690.8474ms - 200
+2026-04-14 16:31:33.904 +02:00 [INF] End processing HTTP request after 1694.825ms - 200
+2026-04-14 16:31:33.905 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-04-14 16:31:33.906 +02:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1697.234ms
+2026-04-14 16:31:33.907 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-04-14 16:31:33.909 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 1707.8857ms
+2026-04-14 16:31:33.938 +02:00 [INF] Received HTTP response headers after 1638.2266ms - 200
+2026-04-14 16:31:33.939 +02:00 [INF] End processing HTTP request after 1652.544ms - 200
+2026-04-14 16:31:33.940 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-04-14 16:31:33.941 +02:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1654.9326ms
+2026-04-14 16:31:33.943 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-04-14 16:31:33.944 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 1670.6401ms
+2026-04-14 16:31:34.010 +02:00 [INF] Received HTTP response headers after 1744.6965ms - 200
+2026-04-14 16:31:34.011 +02:00 [INF] End processing HTTP request after 1747.5083ms - 200
+2026-04-14 16:31:34.012 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-04-14 16:31:34.012 +02:00 [INF] Received HTTP response headers after 1706.8144ms - 200
+2026-04-14 16:31:34.013 +02:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 1750.4138ms
+2026-04-14 16:31:34.014 +02:00 [INF] End processing HTTP request after 1715.3664ms - 200
+2026-04-14 16:31:34.015 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-04-14 16:31:34.017 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-04-14 16:31:34.017 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 1759.5378ms
+2026-04-14 16:31:34.018 +02:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 1719.6672ms
+2026-04-14 16:31:34.020 +02:00 [INF] Received HTTP response headers after 1713.0674ms - 200
+2026-04-14 16:31:34.022 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-04-14 16:31:34.023 +02:00 [INF] End processing HTTP request after 1717.5341ms - 200
+2026-04-14 16:31:34.023 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 1742.3392ms
+2026-04-14 16:31:34.024 +02:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Reports.ReportStatisticsResponse'.
+2026-04-14 16:31:34.028 +02:00 [INF] Executed action SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api) in 1722.7842ms
+2026-04-14 16:31:34.029 +02:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ReportsController.GetStatistics (SeaLevel.Api)'
+2026-04-14 16:31:34.029 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/reports/statistics?scenario=SSP370&year=2100 - 200 null application/json; charset=utf-8 1738.5763ms
