@@ -3,7 +3,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using SeaLevel.Application.DTOs.Chat;
 using SeaLevel.Application.DTOs.Forecast;
-using SeaLevel.Application.DTOs.Weather;
 using SeaLevel.Application.Services.Helpers;
 using SeaLevel.Application.Services.Interfaces;
 
@@ -107,53 +106,35 @@ public class ChatService : IChatService
         "خطة"
     };
 
-    private readonly INasaPowerClient _nasaPowerClient;
     private readonly IMlForecastClient _mlForecastClient;
     private readonly IChatCompletionClient _chatCompletionClient;
 
     public ChatService(
-        INasaPowerClient nasaPowerClient,
         IMlForecastClient mlForecastClient,
         IChatCompletionClient chatCompletionClient)
     {
-        _nasaPowerClient = nasaPowerClient;
         _mlForecastClient = mlForecastClient;
         _chatCompletionClient = chatCompletionClient;
     }
 
     public async Task<IReadOnlyList<ChatMetricItem>> GetMetricsAsync(CancellationToken cancellationToken = default)
     {
-        DateTime toDate = DateTime.UtcNow.Date;
-        DateTime fromDate = toDate.AddDays(-14);
-
-        List<DailyWeatherRow> weatherRows = (await _nasaPowerClient.GetDailyWeatherAsync(
-                fromDate,
-                toDate,
-                cancellationToken: cancellationToken))
-            .OrderBy(row => row.Date)
-            .ToList();
-
-        if (weatherRows.Count == 0)
-        {
-            return Array.Empty<ChatMetricItem>();
-        }
-
         MlForecastResponse forecast = await _mlForecastClient.GetQuickForecastAsync(cancellationToken: cancellationToken);
 
         double predictedSeaLevel = forecast.Forecast.Count > 0
-            ? Math.Round(forecast.Forecast.Last().PredictedSeaLevel, 2)
+            ? Math.Round(forecast.Forecast.Last().PredictedTwl, 2)
             : 0.0;
 
-        List<ChatMetricItem> metrics = weatherRows
-            .Select(row => new ChatMetricItem
+        List<ChatMetricItem> metrics = forecast.Forecast
+            .Select(point => new ChatMetricItem
             {
-                Date = row.Date,
-                WindSpeedMs = Math.Round(row.WS2M, 2),
-                TemperatureC = Math.Round(row.T2M, 2),
-                RelativeHumidityPct = Math.Round(row.RH2M, 2),
-                SeaLevelPressureHpa = Math.Round(row.SLP, 2),
-                PredictedSeaLevelMm = predictedSeaLevel,
-                Value = predictedSeaLevel
+                Date = DateTime.Parse(point.Date).AddHours(point.Hour),
+                WindSpeedMs = 0,
+                TemperatureC = 0,
+                RelativeHumidityPct = 0,
+                SeaLevelPressureHpa = 0,
+                PredictedSeaLevelMm = Math.Round(point.PredictedTwl, 2),
+                Value = Math.Round(point.PredictedTwl, 2)
             })
             .ToList();
 
@@ -197,22 +178,11 @@ public class ChatService : IChatService
             currentScenarioAnalysisRequest ||
             mitigationRequest;
 
-        DateTime toDate = DateTime.UtcNow.Date;
-        DateTime fromDate = toDate.AddDays(-14);
-
-        IEnumerable<DailyWeatherRow> weatherRows = await _nasaPowerClient.GetDailyWeatherAsync(
-            fromDate,
-            toDate,
-            cancellationToken: cancellationToken);
-
-        List<DailyWeatherRow> weatherRowsList = weatherRows.ToList();
-
         MlForecastResponse forecast = await _mlForecastClient.GetForecastAsync(
-            weatherRowsList,
             cancellationToken: cancellationToken);
 
         List<double> forecastSeries = forecast.Forecast
-            .Select(point => point.PredictedSeaLevel)
+            .Select(point => point.PredictedTwl)
             .ToList();
 
         double basePredictedSeaLevel = RiskMappingHelper.GetBasePredictedSeaLevel(forecast);
@@ -243,9 +213,6 @@ public class ChatService : IChatService
         List<ChatReferenceItem> references = BuildReferenceSet(
             scenario,
             year,
-            fromDate,
-            toDate,
-            weatherRowsList.Count,
             basePredictedSeaLevel,
             delta,
             adjustedPredictedSeaLevel,
@@ -260,7 +227,7 @@ public class ChatService : IChatService
             highRiskAreas,
             qismBreakdown,
             atRiskFacilities,
-            forecast.HorizonDays,
+            forecast.HorizonHours,
             forecast.InputLastDate,
             forecastSeries.Count,
             minForecast,
@@ -272,9 +239,6 @@ public class ChatService : IChatService
             request.Message,
             scenario,
             year,
-            fromDate,
-            toDate,
-            weatherRowsList.Count,
             basePredictedSeaLevel,
             delta,
             adjustedPredictedSeaLevel,
@@ -289,7 +253,7 @@ public class ChatService : IChatService
             highRiskAreas,
             qismBreakdown,
             atRiskFacilities,
-            forecast.HorizonDays,
+            forecast.HorizonHours,
             forecast.InputLastDate,
             forecastSeries.Count,
             minForecast,
@@ -411,9 +375,6 @@ LANGUAGE
         string userMessage,
         string scenario,
         int year,
-        DateTime fromDate,
-        DateTime toDate,
-        int weatherRowsCount,
         double basePredictedSeaLevel,
         double delta,
         double adjustedPredictedSeaLevel,
@@ -428,7 +389,7 @@ LANGUAGE
         IReadOnlyList<string> highRiskAreas,
         IReadOnlyList<QismResult> qismBreakdown,
         IReadOnlyList<InfrastructureFacility> atRiskFacilities,
-        int horizonDays,
+        int horizonHours,
         string inputLastDate,
         int forecastPointCount,
         double minForecast,
@@ -453,10 +414,8 @@ LANGUAGE
         builder.AppendLine($"- Year: {year}");
         builder.AppendLine("- Active selection rule: when user asks about current/chosen/selected scenario, use Scenario and Year above.");
         builder.AppendLine("- Follow-up rule: pronouns like that/this refer to this active scenario-year risk context.");
-        builder.AppendLine($"- Weather window (UTC): {fromDate:yyyy-MM-dd} to {toDate:yyyy-MM-dd}");
-        builder.AppendLine($"- Weather observations used: {weatherRowsCount}");
         builder.AppendLine($"- Forecast points returned: {forecastPointCount}");
-        builder.AppendLine($"- Forecast horizon days: {horizonDays}");
+        builder.AppendLine($"- Forecast horizon hours: {horizonHours}");
         builder.AppendLine($"- Forecast input last date: {inputLastDate}");
         builder.AppendLine($"- Base predicted sea level (mm): {Format(basePredictedSeaLevel)}");
         builder.AppendLine($"- Combined scenario-year delta (mm): {Format(delta, 3)}");
@@ -608,9 +567,6 @@ populationAtRisk = ProjectionEngine.CalculatePopulationAtRisk(floodedAreaKm2)
     private static List<ChatReferenceItem> BuildReferenceSet(
         string scenario,
         int year,
-        DateTime fromDate,
-        DateTime toDate,
-        int weatherRowsCount,
         double basePredictedSeaLevel,
         double delta,
         double adjustedPredictedSeaLevel,
@@ -625,7 +581,7 @@ populationAtRisk = ProjectionEngine.CalculatePopulationAtRisk(floodedAreaKm2)
         IReadOnlyList<string> highRiskAreas,
         IReadOnlyList<QismResult> qismBreakdown,
         IReadOnlyList<InfrastructureFacility> atRiskFacilities,
-        int horizonDays,
+        int horizonHours,
         string inputLastDate,
         int forecastPointCount,
         double minForecast,
@@ -638,14 +594,8 @@ populationAtRisk = ProjectionEngine.CalculatePopulationAtRisk(floodedAreaKm2)
             new ChatReferenceItem
             {
                 Id = "R1",
-                Title = "NASA POWER weather context",
-                Detail = $"Window {fromDate:yyyy-MM-dd} to {toDate:yyyy-MM-dd}, records={weatherRowsCount}, parameters=WS2M,T2M,RH2M,PS,SLP,WD2M"
-            },
-            new ChatReferenceItem
-            {
-                Id = "R2",
                 Title = "ML forecast output",
-                Detail = $"points={forecastPointCount}, horizonDays={horizonDays}, inputLastDate={inputLastDate}, min={Format(minForecast)} mm, max={Format(maxForecast)} mm, mean={Format(meanForecast)} mm, trendDelta={Format(trendDelta)} mm"
+                Detail = $"points={forecastPointCount}, horizonHours={horizonHours}, inputLastDate={inputLastDate}, min={Format(minForecast)} mm, max={Format(maxForecast)} mm, mean={Format(meanForecast)} mm, trendDelta={Format(trendDelta)} mm"
             },
             new ChatReferenceItem
             {

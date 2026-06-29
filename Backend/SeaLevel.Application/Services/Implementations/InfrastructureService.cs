@@ -1,6 +1,5 @@
 using SeaLevel.Application.DTOs.Forecast;
 using SeaLevel.Application.DTOs.Infrastructure;
-using SeaLevel.Application.DTOs.Weather;
 using SeaLevel.Application.Services.Helpers;
 using SeaLevel.Application.Services.Interfaces;
 using System;
@@ -13,12 +12,10 @@ namespace SeaLevel.Application.Services.Implementations;
 
 public class InfrastructureService : IInfrastructureService
 {
-    private readonly INasaPowerClient _nasaPowerClient;
     private readonly IMlForecastClient _mlForecastClient;
 
-    public InfrastructureService(INasaPowerClient nasaPowerClient, IMlForecastClient mlForecastClient)
+    public InfrastructureService(IMlForecastClient mlForecastClient)
     {
-        _nasaPowerClient = nasaPowerClient;
         _mlForecastClient = mlForecastClient;
     }
 
@@ -34,16 +31,7 @@ public class InfrastructureService : IInfrastructureService
         RiskMappingHelper.ValidateScenario(scenario);
         RiskMappingHelper.ValidateYear(year);
 
-        DateTime fromDate = from ?? DateTime.UtcNow.AddDays(-14);
-        DateTime toDate = to ?? DateTime.UtcNow;
-
-        IEnumerable<DailyWeatherRow> weatherRows = await _nasaPowerClient.GetDailyWeatherAsync(
-            fromDate,
-            toDate,
-            cancellationToken: cancellationToken);
-
-        MlForecastResponse forecast = await _mlForecastClient.GetForecastAsync( 
-            weatherRows,
+        MlForecastResponse forecast = await _mlForecastClient.GetForecastAsync(
             cancellationToken: cancellationToken);
 
         double basePredictedSeaLevel = RiskMappingHelper.GetBasePredictedSeaLevel(forecast);

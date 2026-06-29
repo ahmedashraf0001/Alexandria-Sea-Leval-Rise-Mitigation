@@ -21,8 +21,8 @@ predictor = SeaLevelPredictor(MODEL_FILES_DIR)
 
 app = FastAPI(
     title="Alexandria Sea Level Forecast API",
-    version="1.0.0",
-    description="Production-ready FastAPI wrapper for the LSTM sea-level forecasting model.",
+    version="2.0.0",
+    description="FastAPI wrapper for the hourly Bidirectional LSTM sea-level forecasting model.",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -51,8 +51,8 @@ def health() -> HealthResponse:
             status="ok",
             model_loaded=predictor.is_loaded,
             last_known_date=predictor.get_last_known_date(),
-            lookback_window=predictor.lookback_window,
-            forecast_horizon=predictor.forecast_horizon,
+            lookback_hours=predictor.lookback_hours,
+            forecast_hours=predictor.forecast_hours,
         )
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
@@ -61,13 +61,14 @@ def health() -> HealthResponse:
 @app.post("/forecast", response_model=ForecastResponse)
 def forecast(request: ForecastRequest) -> ForecastResponse:
     try:
-        history = [row.model_dump() for row in request.history] if request.history else None
-        new_days = [row.model_dump() for row in request.new_days] if request.new_days else None
-
+        history = (
+            [row.model_dump() for row in request.history]
+            if request.history
+            else None
+        )
         result = predictor.forecast(
             history=history,
-            new_days=new_days,
-            horizon_days=request.horizon_days,
+            horizon_hours=request.horizon_hours,
         )
         return ForecastResponse(**result)
     except ValueError as exc:
@@ -79,7 +80,7 @@ def forecast(request: ForecastRequest) -> ForecastResponse:
 @app.post("/forecast/quick", response_model=ForecastResponse)
 def forecast_quick() -> ForecastResponse:
     try:
-        result = predictor.forecast(history=None, new_days=None, horizon_days=None)
+        result = predictor.forecast(history=None, horizon_hours=None)
         return ForecastResponse(**result)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc

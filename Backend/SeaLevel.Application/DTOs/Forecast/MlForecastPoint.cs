@@ -5,8 +5,11 @@ namespace SeaLevel.Application.DTOs.Forecast;
 public class MlForecastPoint
 {
     [JsonPropertyName("date")]
-    public DateTime Date { get; set; }
+    public string Date { get; set; } = string.Empty;
 
-    [JsonPropertyName("predicted_sea_level")]
-    public double PredictedSeaLevel { get; set; }
+    [JsonPropertyName("hour")]
+    public int Hour { get; set; }
+
+    [JsonPropertyName("predicted_twl")]
+    public double PredictedTwl { get; set; }
 }

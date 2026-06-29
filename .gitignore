@@ -1,0 +1,17 @@
+# Visual Studio / .NET build artifacts
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.json.cache
+
+# Python cache and environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# App logs
+Backend/SeaLevel.Api/logs/
