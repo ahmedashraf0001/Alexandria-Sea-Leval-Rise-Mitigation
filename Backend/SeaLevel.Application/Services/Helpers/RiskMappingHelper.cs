@@ -37,7 +37,7 @@ public static class RiskMappingHelper
             throw new InvalidOperationException("ML API returned an empty forecast.");
         }
 
-        return response.Forecast.Last().PredictedSeaLevel;
+        return response.Forecast.Max(e => e.PredictedSeaLevel);
     }
 
     public static double ApplyScenarioAndYearAdjustment(double predictedSeaLevel, string scenario, int year)
