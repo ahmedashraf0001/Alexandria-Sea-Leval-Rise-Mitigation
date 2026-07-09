@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeaLevel.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd2d1686135b5d433ab0d75d82cae6521a75d0ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bab5d038ae97b4a7bb35fee4c43ada04ca8f7a53")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeaLevel.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeaLevel.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -18,6 +18,7 @@ import {
   Info,
   Focus,
   Activity,
+  Target,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -121,7 +122,6 @@ const HomePage = () => {
       <Header active="home" />
 
       <main className="container mx-auto px-6 py-8 space-y-12">
-        {/* Section 1: Top Metrics Dashboard */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
           {/* Card 1: Projected SLR */}
           <div className="bg-white border border-gray-200 p-6 rounded-2xl hover:border-blue-500/50 transition-all group shadow-sm hover:shadow-md">
@@ -215,6 +215,40 @@ const HomePage = () => {
           </div>
         </section>
 
+        {/* Section 0: Egypt Vision 2030 Alignment */}
+        <section
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch animate-fade-in"
+          dir="ltr"
+        >
+          <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-200 min-h-[320px] lg:min-h-0">
+            <img
+              src="./public/Photos/HeroSection.png"
+              alt="مشروع الإنذار المبكر لمواجهة ارتفاع منسوب البحر بالإسكندرية"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-all flex flex-col justify-center text-right"
+            dir="rtl"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[11px] font-bold uppercase tracking-widest mb-6 w-fit">
+              <Target className="w-3.5 h-3.5" />
+              الهدف الخامس — رؤية مصر 2030
+            </div>
+
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
+              مشروعنا: تطبيق عملي لمواجهة تحديات التغير المناخي
+            </h1>
+
+            <p className="text-gray-600 text-base leading-loose">
+              يتماشى مشروع تخرجنا بشكل وثيق مع الهدف الخامس لرؤية مصر 2030، حيث يُعد نظام الإنذار المبكر الذي نطوره تطبيقاً عملياً لمواجهة الآثار المترتبة على التغيرات المناخية. فمن خلال توظيف الذكاء الاصطناعي والتحليل المكاني للتنبؤ بالعواصف وارتفاع منسوب البحر وفقاً لتقارير الهيئة الحكومية الدولية المعنية بتغير المناخ (IPCC)، نساهم مباشرة في تعزيز قدرة الأنظمة البيئية والعمرانية على التكيف ومواجهة الكوارث الطبيعية قبل وقوعها. كما يوفر المشروع تحليلاً دقيقاً للمخاطر لدعم الجهات المعنية في حماية السكان والمرافق العامة والتراث، مما يترجم مساعي الرؤية إلى حلول تكنولوجية استباقية. وعليه، يدعم مشروعنا جهود الدولة في الحفاظ على التنمية والبيئة معاً من خلال الإدارة الفعالة للأزمات وحماية المقدرات الوطنية. ليكون هذا النظام في النهاية أداة فاعلة تساهم في حفظ حقوق الأجيال القادمة للعيش في مستقبل أكثر أمناً واستدامة.
+            </p>
+          </div>
+        </section>
+
+        {/* Section 1: Top Metrics Dashboard */}
+        
         {/* Section 2: Removed from Home — primary maps moved to feature pages (Predictions / Infrastructure) */}
 
         {/* Section 3: Threat Landscape */}

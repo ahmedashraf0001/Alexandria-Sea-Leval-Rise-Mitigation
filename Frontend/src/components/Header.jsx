@@ -53,16 +53,7 @@ const Header = ({ active = "home" }) => {
           >
             تدخلات عاجله
           </Link>
-          <Link
-            to="/Analytics"
-            className={`text-sm font-medium transition-colors ${
-              active === "Analytics"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                : "text-gray-500 hover:text-blue-600"
-            }`}
-          >
-            التحليلات
-          </Link>
+
           <Link
             to="/futurePlaning"
             className={`text-sm font-medium transition-colors ${
@@ -72,6 +63,16 @@ const Header = ({ active = "home" }) => {
             }`}
           >
             تخطيط مستقبلي
+          </Link>
+                    <Link
+            to="/Analytics"
+            className={`text-sm font-medium transition-colors ${
+              active === "Analytics"
+                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+                : "text-gray-500 hover:text-blue-600"
+            }`}
+          >
+            التحليلات
           </Link>
         </nav>
 
@@ -91,7 +92,7 @@ const Header = ({ active = "home" }) => {
           <p className="text-[10px] text-gray-500">نظام إدارة تنبؤات الفيضان</p>
         </div>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Coat_of_arms_of_Egypt_%28Official%29.svg"
+          src="./public/Photos/logo_alexguard.png"
           alt="App Logo"
           className="w-10 h-auto"
         />
