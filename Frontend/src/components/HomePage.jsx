@@ -133,8 +133,8 @@ const HomePage = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-3xl font-extrabold text-gray-900 tracking-tight">
-                {mapData?.floodedAreaKm2 ? (
-                  `${Number(mapData.floodedAreaKm2).toFixed(2)} كم²`
+                {dashboardData?.floodedAreaKm2 !== undefined && dashboardData?.floodedAreaKm2 !== null ? (
+                  `${Number(dashboardData.floodedAreaKm2).toFixed(2)} كم²`
                 ) : (
                   <div className="h-9 w-24 bg-gray-100 rounded-lg animate-pulse mb-1"></div>
                 )}

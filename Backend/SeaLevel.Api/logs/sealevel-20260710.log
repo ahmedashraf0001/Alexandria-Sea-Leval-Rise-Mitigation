@@ -2786,3 +2786,1391 @@ FROM [LandUseFeatures] AS [l]
 2026-07-10 16:41:51.088 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 30.0577ms
 2026-07-10 16:41:51.089 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
 2026-07-10 16:41:51.092 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 31.5822ms
+2026-07-10 17:52:49.265 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-10 17:52:49.430 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-10 17:52:49.530 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-10 17:52:49.979 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-10 17:52:50.011 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-10 17:52:50.020 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-10 17:52:50.119 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-10 17:52:50.159 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-07-10 17:52:50.186 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-10 17:52:50.263 +03:00 [INF] User profile is available. Using 'C:\Users\lyr1csan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-10 17:52:50.862 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-07-10 17:52:50.972 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-07-10 17:52:50.990 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-07-10 17:52:51.046 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LongTermScenarios] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-10 17:52:51.056 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LandUseFeatures] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-10 17:52:51.473 +03:00 [INF] Now listening on: https://localhost:7228
+2026-07-10 17:52:51.474 +03:00 [INF] Now listening on: http://localhost:5219
+2026-07-10 17:52:51.694 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-10 17:52:51.695 +03:00 [INF] Hosting environment: Development
+2026-07-10 17:52:51.696 +03:00 [INF] Content root path: C:\Users\lyr1csan\Desktop\robotics\Alexandria-Sea-Leval-Rise-Mitigation\Backend\SeaLevel.Api
+2026-07-10 17:53:45.414 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:45.874 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:45.956 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:46.199 +03:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 17:53:46.206 +03:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 17:53:47.726 +03:00 [INF] Received HTTP response headers after 1513.4004ms - 200
+2026-07-10 17:53:47.728 +03:00 [INF] End processing HTTP request after 1533.9073ms - 200
+2026-07-10 17:53:47.780 +03:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-07-10 17:53:47.781 +03:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-07-10 17:53:51.084 +03:00 [INF] Received HTTP response headers after 3301.911ms - 200
+2026-07-10 17:53:51.094 +03:00 [INF] End processing HTTP request after 3313.5135ms - 200
+2026-07-10 17:53:51.158 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:51.311 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:51.351 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:51.389 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:51.411 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 5446.9856ms
+2026-07-10 17:53:51.413 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:51.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:51.435 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6045.4582ms
+2026-07-10 17:53:51.437 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:51.440 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:51.520 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:51.531 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:51.538 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:51.549 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:51.551 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 108.9165ms
+2026-07-10 17:53:51.553 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:51.555 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 135.0674ms
+2026-07-10 17:53:54.429 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:54.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:54.439 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.439 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.441 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:54.454 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 17:53:54.465 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:54.471 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:54.483 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:54.516 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:54.520 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:54.522 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 78.8825ms
+2026-07-10 17:53:54.522 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:54.523 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.533 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:54.533 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 104.4156ms
+2026-07-10 17:53:54.533 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:54.538 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.545 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:54.555 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:54.556 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 17:53:54.559 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:54.562 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 105.5384ms
+2026-07-10 17:53:54.563 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.564 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:54.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 130.2074ms
+2026-07-10 17:53:54.569 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:54.575 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.576 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:54.577 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 17:53:54.578 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 26.0968ms
+2026-07-10 17:53:54.581 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.582 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 49.1852ms
+2026-07-10 17:53:54.583 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:54.588 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:54.591 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:54.598 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 17:53:54.599 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 19.8335ms
+2026-07-10 17:53:54.600 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 17:53:54.601 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 32.2814ms
+2026-07-10 17:53:57.054 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:57.063 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:57.065 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:57.075 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:57.114 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:57.121 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:57.130 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:57.132 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 65.451ms
+2026-07-10 17:53:57.134 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:57.135 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 80.5638ms
+2026-07-10 17:53:57.140 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 17:53:57.160 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:57.163 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 17:53:57.174 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 17:53:57.241 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 17:53:57.249 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 17:53:57.257 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 17:53:57.259 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 89.2316ms
+2026-07-10 17:53:57.260 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 17:53:57.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 121.9508ms
+2026-07-10 18:00:01.167 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:01.170 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:01.172 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:01.309 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:01.326 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:01.337 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:01.353 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:01.356 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 181.2211ms
+2026-07-10 18:00:01.358 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:01.360 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 193.0243ms
+2026-07-10 18:00:01.368 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:01.372 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:01.374 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:01.380 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:01.386 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:01.391 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:01.395 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:01.404 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 27.9945ms
+2026-07-10 18:00:01.405 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:01.406 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 38.902ms
+2026-07-10 18:00:13.828 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:13.832 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:13.835 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.838 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.838 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:13.840 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:00:13.850 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:13.856 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:13.859 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:13.862 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:13.864 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:13.890 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:13.890 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:13.894 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 52.7622ms
+2026-07-10 18:00:13.894 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:00:13.896 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.897 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 54.3734ms
+2026-07-10 18:00:13.898 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 69.4279ms
+2026-07-10 18:00:13.899 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.899 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:13.902 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:13.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 71.9367ms
+2026-07-10 18:00:13.906 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.908 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.911 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:13.912 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:00:13.916 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:13.917 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:13.920 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:13.922 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:13.924 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:13.925 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:13.927 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:13.930 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 16.1818ms
+2026-07-10 18:00:13.931 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:00:13.932 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.933 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 18.546ms
+2026-07-10 18:00:13.934 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 34.645ms
+2026-07-10 18:00:13.935 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:00:13.939 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 37.3177ms
+2026-07-10 18:00:38.229 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:38.233 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:38.235 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:38.244 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:38.253 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:38.259 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:38.267 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:38.270 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 31.9267ms
+2026-07-10 18:00:38.271 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:38.273 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 43.8743ms
+2026-07-10 18:00:38.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:00:38.281 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:38.282 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:00:38.289 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:00:38.296 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:00:38.303 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:00:38.308 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:00:38.309 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 25.6949ms
+2026-07-10 18:00:38.311 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:00:38.313 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 37.947ms
+2026-07-10 18:40:56.589 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-10 18:40:56.654 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-10 18:40:56.712 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-10 18:40:56.792 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-10 18:40:56.806 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-10 18:40:56.809 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-10 18:40:56.868 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-10 18:40:56.876 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-07-10 18:40:56.889 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-10 18:40:56.912 +03:00 [INF] User profile is available. Using 'C:\Users\lyr1csan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-10 18:40:57.219 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-07-10 18:40:57.282 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-07-10 18:40:57.300 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-07-10 18:40:57.348 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LongTermScenarios] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-10 18:40:57.357 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LandUseFeatures] AS [l]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-10 18:40:57.574 +03:00 [INF] Now listening on: https://localhost:7228
+2026-07-10 18:40:57.575 +03:00 [INF] Now listening on: http://localhost:5219
+2026-07-10 18:40:57.752 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-10 18:40:57.753 +03:00 [INF] Hosting environment: Development
+2026-07-10 18:40:57.754 +03:00 [INF] Content root path: C:\Users\lyr1csan\Desktop\robotics\Alexandria-Sea-Leval-Rise-Mitigation\Backend\SeaLevel.Api
+2026-07-10 18:41:05.816 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:05.994 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.010 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:06.027 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:06.050 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 30.2062ms
+2026-07-10 18:41:06.051 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:06.052 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.060 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.061 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 258.9479ms
+2026-07-10 18:41:06.062 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:06.068 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:06.071 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 4.1858ms
+2026-07-10 18:41:06.073 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.076 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:06.076 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:06.078 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 27.047ms
+2026-07-10 18:41:06.079 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:06.079 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:06.129 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.129 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.133 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.136 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:06.155 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:06.155 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:06.155 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:06.156 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:06.208 +03:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.210 +03:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.241 +03:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.241 +03:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.241 +03:00 [INF] Start processing HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.243 +03:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.245 +03:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:06.246 +03:00 [INF] Sending HTTP request GET https://power.larc.nasa.gov/api/temporal/daily/point?*
+2026-07-10 18:41:07.566 +03:00 [INF] Received HTTP response headers after 1317.2098ms - 200
+2026-07-10 18:41:07.569 +03:00 [INF] End processing HTTP request after 1327.7801ms - 200
+2026-07-10 18:41:07.596 +03:00 [INF] Received HTTP response headers after 1347.9551ms - 200
+2026-07-10 18:41:07.598 +03:00 [INF] End processing HTTP request after 1356.4781ms - 200
+2026-07-10 18:41:07.612 +03:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.612 +03:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.613 +03:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.614 +03:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.617 +03:00 [INF] Received HTTP response headers after 1405.5823ms - 200
+2026-07-10 18:41:07.639 +03:00 [INF] Received HTTP response headers after 1389.7442ms - 200
+2026-07-10 18:41:07.639 +03:00 [INF] End processing HTTP request after 1433.0633ms - 200
+2026-07-10 18:41:07.640 +03:00 [INF] End processing HTTP request after 1398.6895ms - 200
+2026-07-10 18:41:07.641 +03:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.643 +03:00 [INF] Start processing HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.643 +03:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:07.644 +03:00 [INF] Sending HTTP request POST http://localhost:8000/forecast
+2026-07-10 18:41:12.088 +03:00 [INF] Received HTTP response headers after 4443.4328ms - 200
+2026-07-10 18:41:12.089 +03:00 [INF] End processing HTTP request after 4447.9664ms - 200
+2026-07-10 18:41:12.115 +03:00 [INF] Received HTTP response headers after 4469.7404ms - 200
+2026-07-10 18:41:12.117 +03:00 [INF] End processing HTTP request after 4474.0606ms - 200
+2026-07-10 18:41:12.136 +03:00 [INF] Received HTTP response headers after 4520.2987ms - 200
+2026-07-10 18:41:12.137 +03:00 [INF] End processing HTTP request after 4525.4475ms - 200
+2026-07-10 18:41:12.148 +03:00 [INF] Received HTTP response headers after 4533.2807ms - 200
+2026-07-10 18:41:12.150 +03:00 [INF] End processing HTTP request after 4538.3738ms - 200
+2026-07-10 18:41:12.153 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.159 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.186 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:12.191 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 6032.1618ms
+2026-07-10 18:41:12.193 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.196 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.196 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.196 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:12.202 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.203 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:12.203 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 6126.8819ms
+2026-07-10 18:41:12.210 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.217 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:12.219 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 14.5961ms
+2026-07-10 18:41:12.220 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.222 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 25.175ms
+2026-07-10 18:41:12.302 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.303 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.303 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.334 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.334 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.334 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.354 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:12.355 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:12.356 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:12.356 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 6198.9596ms
+2026-07-10 18:41:12.358 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.359 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 6198.4069ms
+2026-07-10 18:41:12.360 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6283.3162ms
+2026-07-10 18:41:12.361 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.362 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:12.364 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:12.365 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6286.1341ms
+2026-07-10 18:41:12.367 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.368 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 6205.0143ms
+2026-07-10 18:41:12.368 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.371 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:12.372 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.373 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:12.374 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:12.375 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 6296.2185ms
+2026-07-10 18:41:12.379 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.379 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.380 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.382 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:12.385 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.386 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.389 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:12.390 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.392 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:12.390 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.396 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:12.398 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:12.400 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 25.7823ms
+2026-07-10 18:41:12.401 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.402 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:12.402 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 40.2338ms
+2026-07-10 18:41:12.403 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:12.403 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 26.6877ms
+2026-07-10 18:41:12.407 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 20.488ms
+2026-07-10 18:41:12.407 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.408 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:12.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 45.1504ms
+2026-07-10 18:41:12.410 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 36.0424ms
+2026-07-10 18:41:14.189 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2030 - null null
+2026-07-10 18:41:14.190 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:14.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2030 - null null
+2026-07-10 18:41:14.192 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2030 - null null
+2026-07-10 18:41:14.193 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.195 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.197 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.199 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.200 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:14.200 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:14.201 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:14.202 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:14.211 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:14.211 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:14.211 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:14.218 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:14.218 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:14.219 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:14.220 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:14.221 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:14.222 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:14.223 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:14.224 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 19.6496ms
+2026-07-10 18:41:14.228 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:14.229 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.232 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:14.232 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 42.3186ms
+2026-07-10 18:41:14.233 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 26.2189ms
+2026-07-10 18:41:14.236 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.237 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:14.238 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP370&year=2030 - 200 null application/json; charset=utf-8 45.3161ms
+2026-07-10 18:41:14.238 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:14.238 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 35.8477ms
+2026-07-10 18:41:14.242 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 36.3639ms
+2026-07-10 18:41:14.242 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.243 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:14.244 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP370&year=2030 - 200 null application/json; charset=utf-8 55.2435ms
+2026-07-10 18:41:14.245 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP370&year=2030 - 200 null application/json; charset=utf-8 52.6424ms
+2026-07-10 18:41:16.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2030 - null null
+2026-07-10 18:41:16.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2030 - null null
+2026-07-10 18:41:16.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:16.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2030 - null null
+2026-07-10 18:41:16.005 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.007 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.009 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.011 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.011 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:16.012 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:16.013 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:16.014 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:16.018 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:16.020 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:16.022 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:16.022 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:16.026 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:16.026 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:16.029 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:16.030 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:16.032 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:16.033 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:16.033 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 15.2369ms
+2026-07-10 18:41:16.036 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:16.038 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:16.039 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.040 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:16.041 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 26.3071ms
+2026-07-10 18:41:16.043 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 40.471ms
+2026-07-10 18:41:16.043 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:16.044 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 27.5232ms
+2026-07-10 18:41:16.045 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.048 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 27.6689ms
+2026-07-10 18:41:16.049 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.049 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 47.4469ms
+2026-07-10 18:41:16.050 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:16.051 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 49.0913ms
+2026-07-10 18:41:16.054 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2030 - 200 null application/json; charset=utf-8 51.7483ms
+2026-07-10 18:41:18.478 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:18.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:18.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:18.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:18.481 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.482 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.484 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.486 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.487 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:18.488 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:18.489 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:18.489 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:18.501 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:18.501 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:18.501 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:18.501 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:18.504 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:18.507 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:18.507 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:18.508 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 14.5976ms
+2026-07-10 18:41:18.508 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:18.511 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:18.512 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:18.512 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.514 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:18.518 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 37.7023ms
+2026-07-10 18:41:18.520 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:18.520 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:18.521 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:18.522 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 27.233ms
+2026-07-10 18:41:18.523 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 31.3281ms
+2026-07-10 18:41:18.524 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 34.0848ms
+2026-07-10 18:41:18.525 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.526 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.528 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:18.528 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 48.5659ms
+2026-07-10 18:41:18.529 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 49.7717ms
+2026-07-10 18:41:18.530 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 52.4229ms
+2026-07-10 18:41:20.312 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:20.312 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:20.316 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.318 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.318 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:20.319 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:20.331 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:20.331 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:20.337 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:20.337 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:20.341 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:20.341 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:20.346 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:20.349 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 26.5155ms
+2026-07-10 18:41:20.349 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:20.350 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.352 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 31.1477ms
+2026-07-10 18:41:20.353 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 40.4803ms
+2026-07-10 18:41:20.354 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:20.354 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:20.361 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 48.9815ms
+2026-07-10 18:41:20.365 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.365 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:20.370 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:20.375 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:20.379 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:20.382 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:20.383 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:20.385 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:20.389 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:20.393 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:20.396 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 24.0312ms
+2026-07-10 18:41:20.398 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.399 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:20.400 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 45.8219ms
+2026-07-10 18:41:20.401 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 26.6828ms
+2026-07-10 18:41:20.404 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:20.405 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 49.0501ms
+2026-07-10 18:41:25.042 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:25.044 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.045 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:25.047 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:25.049 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 2.4276ms
+2026-07-10 18:41:25.050 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.051 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 9.0274ms
+2026-07-10 18:41:25.053 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:25.055 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.056 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:25.058 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:25.059 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.4698ms
+2026-07-10 18:41:25.062 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.064 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 11.0649ms
+2026-07-10 18:41:25.066 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:25.066 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.070 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.070 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.071 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.072 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.073 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:25.076 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.077 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.078 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:25.081 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:25.081 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:25.089 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.089 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.089 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.089 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.092 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:25.095 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.095 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.097 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.099 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.097 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 17.1036ms
+2026-07-10 18:41:25.101 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:25.102 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.103 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.104 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:25.106 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:25.107 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.109 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 43.4913ms
+2026-07-10 18:41:25.111 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 24.9534ms
+2026-07-10 18:41:25.112 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:25.112 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:25.111 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 28.9265ms
+2026-07-10 18:41:25.116 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.118 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 33.7209ms
+2026-07-10 18:41:25.120 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.120 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.121 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 50.4736ms
+2026-07-10 18:41:25.123 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.124 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - null null
+2026-07-10 18:41:25.125 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.125 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.126 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 59.7815ms
+2026-07-10 18:41:25.130 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:25.131 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:25.132 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.133 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:25.134 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 63.1872ms
+2026-07-10 18:41:25.137 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 17.8506ms
+2026-07-10 18:41:25.139 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:25.140 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.142 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.143 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.146 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:25.147 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.149 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 47.7459ms
+2026-07-10 18:41:25.149 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.152 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:25.153 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.156 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.158 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:25.161 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:25.162 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:25.163 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 24.848ms
+2026-07-10 18:41:25.164 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 23.4252ms
+2026-07-10 18:41:25.164 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:25.165 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.166 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.167 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 22.7386ms
+2026-07-10 18:41:25.168 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 51.565ms
+2026-07-10 18:41:25.169 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 52.2602ms
+2026-07-10 18:41:25.170 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:25.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP585&year=2100 - 200 null application/json; charset=utf-8 50.4975ms
+2026-07-10 18:41:32.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:32.868 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.869 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:32.871 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:32.873 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 2.1089ms
+2026-07-10 18:41:32.874 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.876 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 17.7791ms
+2026-07-10 18:41:32.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:32.881 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.882 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:32.884 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:32.885 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.1313ms
+2026-07-10 18:41:32.886 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.887 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 9.9008ms
+2026-07-10 18:41:32.919 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:32.921 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:32.924 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.925 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:32.925 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:32.926 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.927 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:32.930 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.932 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.935 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:32.937 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:32.938 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:32.942 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:32.943 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:32.945 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:32.950 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:32.951 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:32.953 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:32.955 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:32.957 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 16.854ms
+2026-07-10 18:41:32.958 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:32.962 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:32.964 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.964 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:32.966 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:32.967 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:32.969 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 47.8725ms
+2026-07-10 18:41:32.983 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:32.985 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.985 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:32.989 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:32.990 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 54.0255ms
+2026-07-10 18:41:32.991 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:32.993 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 51.1095ms
+2026-07-10 18:41:32.995 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 49.9572ms
+2026-07-10 18:41:32.995 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:32.996 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.997 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:32.998 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.999 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.002 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:32.999 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:33.005 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 80.0592ms
+2026-07-10 18:41:33.005 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:33.002 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 83.6261ms
+2026-07-10 18:41:33.004 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.007 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 81.9568ms
+2026-07-10 18:41:33.008 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:33.012 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:33.014 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.018 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:33.023 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 25.5753ms
+2026-07-10 18:41:33.024 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:33.024 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:33.027 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.028 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:33.031 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:33.033 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 67.3096ms
+2026-07-10 18:41:33.035 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:33.036 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:33.038 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:33.043 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:33.045 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:33.049 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:33.049 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:41:33.052 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:41:33.052 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 30.6851ms
+2026-07-10 18:41:33.054 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:41:33.054 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 28.7701ms
+2026-07-10 18:41:33.056 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.057 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 24.8407ms
+2026-07-10 18:41:33.058 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.059 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 64.1413ms
+2026-07-10 18:41:33.061 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:33.062 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 65.0968ms
+2026-07-10 18:41:33.066 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 60.7642ms
+2026-07-10 18:41:38.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:38.234 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.235 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:38.237 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:38.239 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.4176ms
+2026-07-10 18:41:38.240 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.241 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 8.7612ms
+2026-07-10 18:41:38.241 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/scenarios - null null
+2026-07-10 18:41:38.245 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.246 +03:00 [INF] Route matched with {action = "Get", controller = "Scenarios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IReadOnlyList`1[SeaLevel.Application.DTOs.Scenarios.ScenarioItem]] Get() on controller SeaLevel.Api.Controllers.ScenariosController (SeaLevel.Api).
+2026-07-10 18:41:38.248 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SeaLevel.Application.DTOs.Scenarios.ScenarioItem, SeaLevel.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-07-10 18:41:38.249 +03:00 [INF] Executed action SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api) in 1.3084ms
+2026-07-10 18:41:38.250 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.ScenariosController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.251 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/scenarios - 200 null application/json; charset=utf-8 9.8076ms
+2026-07-10 18:41:38.301 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:38.301 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:38.302 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:38.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:38.305 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.308 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.310 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.312 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:41:38.313 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:41:38.315 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:41:38.316 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:41:38.317 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:41:41.398 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:41.397 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:41.398 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:41.415 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:41:41.416 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:41.418 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:41:41.419 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:41.420 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:41:41.421 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:41.422 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 29.1223ms
+2026-07-10 18:41:41.426 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:41.428 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:41:41.428 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/map-risk - null null
+2026-07-10 18:41:41.431 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:42:03.432 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - null null
+2026-07-10 18:41:41.430 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.409 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:42:03.410 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:42:03.432 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.454 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 22057.1663ms
+2026-07-10 18:42:03.456 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.456 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 25155.4387ms
+2026-07-10 18:42:03.457 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 25138.8263ms
+2026-07-10 18:42:03.458 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 22060.0308ms
+2026-07-10 18:42:03.460 +03:00 [INF] Route matched with {action = "Get", controller = "MapRisk"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.MapRisk.MapRiskResponse]] Get(System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.MapRiskController (SeaLevel.Api).
+2026-07-10 18:42:03.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - null null
+2026-07-10 18:42:03.462 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.463 +03:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Dashboard.DashboardResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.DashboardController (SeaLevel.Api).
+2026-07-10 18:42:03.466 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.474 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 25172.141ms
+2026-07-10 18:42:03.467 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.474 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:42:03.472 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:42:04.488 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - null null
+2026-07-10 18:42:04.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 26186.9468ms
+2026-07-10 18:42:04.488 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:42:04.491 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 26188.5699ms
+2026-07-10 18:42:04.492 +03:00 [INF] Route matched with {action = "Get", controller = "Population"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Population.PopulationRiskResponse]] Get(SeaLevel.Application.DTOs.Queries.ScenarioYearQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.PopulationController (SeaLevel.Api).
+2026-07-10 18:42:04.496 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.MapRisk.MapRiskResponse'.
+2026-07-10 18:42:04.496 +03:00 [INF] Executing endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:42:04.502 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:42:04.505 +03:00 [INF] Executed action SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api) in 1035.8411ms
+2026-07-10 18:42:04.510 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:42:04.506 +03:00 [INF] Route matched with {action = "Get", controller = "Infrastructure"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse]] Get(SeaLevel.Application.DTOs.Queries.InfrastructureQuery, System.Threading.CancellationToken) on controller SeaLevel.Api.Controllers.InfrastructureController (SeaLevel.Api).
+2026-07-10 18:42:04.506 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:42:04.511 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.MapRiskController.Get (SeaLevel.Api)'
+2026-07-10 18:42:04.514 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Dashboard.DashboardResponse'.
+2026-07-10 18:42:04.516 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@scenario='?' (Size = 4000), @year='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [l].[Id], [l].[RiseInMeters], [l].[RiseInMillimeters], [l].[Scenario], [l].[Year]
+FROM [LongTermScenarios] AS [l]
+WHERE [l].[Scenario] = @scenario AND [l].[Year] = @year
+2026-07-10 18:42:04.516 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/map-risk - 200 null application/json; charset=utf-8 23087.8418ms
+2026-07-10 18:42:04.517 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:42:04.517 +03:00 [INF] Executed action SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api) in 1041.1429ms
+2026-07-10 18:42:04.521 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Double), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ForecastLogs] ([BaselineSeaLevel], [ProjectedSeaLevel], [RequestedAt], [Scenario], [UserId], [Year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-07-10 18:42:04.525 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:42:04.525 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.DashboardController.Get (SeaLevel.Api)'
+2026-07-10 18:42:04.529 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Category], [l].[District], [l].[ElevMin], [l].[FeatureId], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Province], [l].[ThresholdMm]
+FROM [LandUseFeatures] AS [l]
+2026-07-10 18:42:04.531 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/dashboard?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1099.0795ms
+2026-07-10 18:42:04.533 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Population.PopulationRiskResponse'.
+2026-07-10 18:42:04.536 +03:00 [INF] Executing OkObjectResult, writing value of type 'SeaLevel.Application.DTOs.Infrastructure.InfrastructureResponse'.
+2026-07-10 18:42:04.538 +03:00 [INF] Executed action SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api) in 33.5237ms
+2026-07-10 18:42:04.539 +03:00 [INF] Executed action SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api) in 25.3989ms
+2026-07-10 18:42:04.540 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.PopulationController.Get (SeaLevel.Api)'
+2026-07-10 18:42:04.541 +03:00 [INF] Executed endpoint 'SeaLevel.Api.Controllers.InfrastructureController.Get (SeaLevel.Api)'
+2026-07-10 18:42:04.542 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/population?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 1081.1723ms
+2026-07-10 18:42:04.545 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5219/api/infrastructure?scenario=SSP245&year=2030 - 200 null application/json; charset=utf-8 55.8454ms
