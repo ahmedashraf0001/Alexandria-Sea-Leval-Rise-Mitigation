@@ -31,6 +31,9 @@ import {
   ShieldCheck,
   Landmark,
   Building2,
+  Layers,
+  Map as MapIcon,
+  MapPin,
 } from "lucide-react";
 import { dataService } from "../services/dataService";
 import { useToast } from "../contexts/useToast";
@@ -125,14 +128,14 @@ const getLandUseStyle = (feature) => {
 
 // Elevation color ramp for the DEM layer (meters above/below sea level)
 const DEM_COLOR_STOPS = [
-  { max: 0, color: "#08306b" }, // below sea level - deep blue
-  { max: 0.5, color: "#2171b5" },
-  { max: 1, color: "#6baed6" },
-  { max: 2, color: "#a6d96a" },
-  { max: 3, color: "#fee08b" },
-  { max: 5, color: "#fdae61" },
-  { max: 8, color: "#f46d43" },
-  { max: Infinity, color: "#a50026" }, // highest ground - dark red
+  { max: 0, color: "#03045e" }, // below sea level - dark navy
+  { max: 0.5, color: "#023e8a" },
+  { max: 1, color: "#0077b6" },
+  { max: 2, color: "#00b4d8" },
+  { max: 3, color: "#90e0ef" },
+  { max: 5, color: "#c77dff" },
+  { max: 8, color: "#9d4edd" },
+  { max: Infinity, color: "#5a189a" }, // highest ground - deep purple
 ];
 
 const getElevationColor = (elevation) => {
@@ -168,14 +171,14 @@ const getDemPopupHtml = (feature) => {
 };
 
 const DEM_LEGEND_ITEMS = [
-  { label: "أقل من 0 م (تحت سطح البحر)", color: "#08306b" },
-  { label: "0 - 0.5 م", color: "#2171b5" },
-  { label: "0.5 - 1 م", color: "#6baed6" },
-  { label: "1 - 2 م", color: "#a6d96a" },
-  { label: "2 - 3 م", color: "#fee08b" },
-  { label: "3 - 4 م", color: "#fdae61" },
-  { label: "4 - 5 م", color: "#f46d43" },
-  { label: "أكثر من 5 م", color: "#a50026" },
+  { label: "أقل من 0 م (تحت سطح البحر)", color: "#03045e" },
+  { label: "0 - 0.5 م", color: "#023e8a" },
+  { label: "0.5 - 1 م", color: "#0077b6" },
+  { label: "1 - 2 م", color: "#00b4d8" },
+  { label: "2 - 3 م", color: "#90e0ef" },
+  { label: "3 - 4 م", color: "#c77dff" },
+  { label: "4 - 5 م", color: "#9d4edd" },
+  { label: "أكثر من 5 م", color: "#5a189a" },
 ];
 
 const getLandUsePopupHtml = (feature) => {
@@ -255,7 +258,7 @@ const FacilityOverlayLayer = ({ facilities, visible, title }) => {
 
 const futurePlaning = () => {
   const { addToast } = useToast();
-  const { selectedScenario, selectedYear } = useRiskStore();
+  const { selectedScenario, selectedYear, mapData } = useRiskStore();
   const [selectedSectors, setSelectedSectors] = useState([
     "ports",
     "hospitals",
@@ -272,6 +275,7 @@ const futurePlaning = () => {
   const [facilities, setFacilities] = useState([]);
   const [modelHighRiskAreas, setModelHighRiskAreas] = useState([]);
   const [admin2Boundaries, setAdmin2Boundaries] = useState(null);
+  const [qismBoundaries, setQismBoundaries] = useState(null);
   const [landUseData, setLandUseData] = useState(null);
   const [demData, setDemData] = useState(null);
   const [selectedLandUseCategories, setSelectedLandUseCategories] = useState(
@@ -280,6 +284,9 @@ const futurePlaning = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [mapRenderVersion, setMapRenderVersion] = useState(0);
   const [showFacilityIcons, setShowFacilityIcons] = useState(false);
+  const [showRiskLayer, setShowRiskLayer] = useState(true);
+  const [showDemLayer, setShowDemLayer] = useState(false);
+  const [showLandUseLayer, setShowLandUseLayer] = useState(true);
 
   useEffect(() => {
     setShowFacilityIcons(false);
@@ -312,10 +319,22 @@ const futurePlaning = () => {
             features: alexandriaAdmin2Features,
           });
         }
+
+        const qismResponse = await fetch(`${import.meta.env.BASE_URL}data/alexandria_qisms.geojson`);
+        if (!qismResponse.ok) {
+          throw new Error(`Failed to load qism boundaries (${qismResponse.status})`);
+        }
+
+        const qismData = await qismResponse.json();
+
+        if (isMounted) {
+          setQismBoundaries(qismData);
+        }
       } catch (error) {
         console.error("Failed to load Alexandria ADM2 boundary data", error);
         if (isMounted) {
           setAdmin2Boundaries(null);
+          setQismBoundaries(null);
         }
       }
     };
@@ -385,20 +404,15 @@ const futurePlaning = () => {
       setIsLoading(true);
 
       try {
-        const [facilityData, dashboardData] = await Promise.all([
-          dataService.getInfrastructureFacilities(selectedScenario, selectedYear),
-          dataService.getDashboardData(selectedScenario, selectedYear),
-        ]);
+        const facilityData = await dataService.getInfrastructureFacilities(selectedScenario, selectedYear);
 
         if (isMounted) {
           setFacilities(facilityData);
-          setModelHighRiskAreas(dashboardData?.highRiskAreas || []);
         }
       } catch (error) {
         console.error("Failed to fetch infrastructure data", error);
         if (isMounted) {
           setFacilities([]);
-          setModelHighRiskAreas([]);
           addToast("تعذر تحميل بيانات البنية التحتية", "error");
         }
       } finally {
@@ -414,6 +428,18 @@ const futurePlaning = () => {
       isMounted = false;
     };
   }, [selectedScenario, selectedYear, addToast]);
+
+  useEffect(() => {
+    const projectedSeaLevelMm = Number(mapData?.projectedSeaLevelMm || 0);
+    const zones = mapData?.zones || [];
+
+    const highRiskAreas = zones
+      .filter((zone) => projectedSeaLevelMm >= Number(zone.thresholdMm || 0))
+      .map((zone) => zone.name)
+      .filter(Boolean);
+
+    setModelHighRiskAreas(highRiskAreas);
+  }, [mapData]);
 
   const createCustomIcon = (type, risk) => {
     const colorClass = getRiskColor(normalizeRiskValue(risk));
@@ -636,6 +662,23 @@ const futurePlaning = () => {
     };
   };
 
+  const getQismPopupHtml = (feature) => {
+    const props = feature?.properties || {};
+    const title = props.nameAr || props.nameEn || "قسم";
+    const risk = getDistrictRiskLevel(
+      title,
+      filteredFacilities,
+      modelHighRiskAreas,
+      normalizeRiskValue,
+      getRiskPriority,
+    );
+
+    return `<div dir="rtl" style="min-width:180px;line-height:1.5">
+      <div style="font-weight:700;margin-bottom:4px;">${title}</div>
+      <div><strong>الحالة:</strong> ${risk ? risk : "غير متأثر"}</div>
+    </div>`;
+  };
+
   const toCsvCell = (value) => {
     const text = String(value ?? "");
     return `"${text.replaceAll('"', '""')}"`;
@@ -816,7 +859,7 @@ const futurePlaning = () => {
               <span className="text-sm font-bold text-gray-600 mb-1">منشأة حيوية</span>
             </div>
             <p className="text-xs text-gray-500 leading-relaxed">
-              متوقع تعرضها للغمر &gt; 0.5م في ظل سيناريو {selectedScenario} بحلول عام {selectedYear}.
+              متوقع تعرضها للغمر بناءً على مقارنة منسوب البحر المتوقع بحدود المناطق المخزنة في قاعدة البيانات.
             </p>
             {!isLoading && (
               <p className="text-[11px] text-gray-400 mt-1">من إجمالي {filteredFacilities.length} منشأة مرئية.</p>
@@ -849,6 +892,53 @@ const futurePlaning = () => {
                 تحميل التقرير
               </button>
             </div>
+
+            <div className="flex gap-2 pointer-events-auto mt-3 bg-white/90 p-2 rounded-xl backdrop-blur-md border border-gray-200 shadow-md w-fit">
+              <button
+                onClick={() => setShowRiskLayer(!showRiskLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showRiskLayer 
+                    ? "bg-red-50 text-red-700 border border-red-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <Layers className="w-4 h-4" />
+                مستوى الخطر
+              </button>
+              <button
+                onClick={() => setShowDemLayer(!showDemLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showDemLayer 
+                    ? "bg-purple-50 text-purple-700 border border-purple-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <MapIcon className="w-4 h-4" />
+                الارتفاعات (DEM)
+              </button>
+              <button
+                onClick={() => setShowLandUseLayer(!showLandUseLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showLandUseLayer 
+                    ? "bg-green-50 text-green-700 border border-green-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <Building2 className="w-4 h-4" />
+                استخدامات الأراضي
+              </button>
+              <button
+                onClick={() => setShowFacilityIcons(!showFacilityIcons)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showFacilityIcons 
+                    ? "bg-blue-50 text-blue-700 border border-blue-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <MapPin className="w-4 h-4" />
+                مواقع المنشآت
+              </button>
+            </div>
           </div>
 
           {isLoading && (
@@ -877,16 +967,17 @@ const futurePlaning = () => {
                 maxZoom={19}
               />
             </LayersControl.BaseLayer>
-            <LayersControl.Overlay checked name="حدود الأقسام الإدارية (ADM2)">
+              {/* External Custom Toggled Layers */}
+              {/* External Custom Toggled Layers */}
               <LayerGroup key={`${filterStateKey}-admin2`}>
                 {admin2Boundaries && (
                   <GeoJSON
                     data={admin2Boundaries}
                     style={{
-                      color: "#2563eb",
-                      weight: 1.5,
-                      fillColor: "#3b82f6",
-                      fillOpacity: 0.12,
+                      color: "#94a3b8",
+                      weight: 1,
+                      fillColor: "#cbd5e1",
+                      fillOpacity: 0.04,
                     }}
                     onEachFeature={(feature, layer) => {
                       const properties = feature?.properties || {};
@@ -894,24 +985,51 @@ const futurePlaning = () => {
                         properties.adm2_name1 ||
                         properties.adm2_ref_name ||
                         properties.adm2_name ||
-                          "قسم";
-                        layer.bindPopup(`
-                          <div dir="rtl" style="min-width:180px">
-                            <strong>${name}</strong><br/>
-                            ${properties.adm1_name1 || properties.adm1_name || ""}<br/>
-                            ${properties.adm0_name1 || properties.adm0_name || ""}
-                          </div>
-                        `);
+                        "قسم";
+                      layer.bindPopup(`
+                        <div dir="rtl" style="min-width:180px">
+                          <strong>${name}</strong><br/>
+                          ${properties.adm1_name1 || properties.adm1_name || ""}<br/>
+                          ${properties.adm0_name1 || properties.adm0_name || ""}
+                        </div>
+                      `);
                     }}
                   />
                 )}
               </LayerGroup>
-            </LayersControl.Overlay>
-            
-            <LayersControl.Overlay checked name="بيانات الاستخدام الأرضي">
-              <LayerGroup key={`${filterStateKey}-landuse`}>
-                {landUseLayerData && landUseLayerData.features.length > 0 && (
+
+              <LayerGroup key={`${qismBoundaryLayerKey}-qisms`}>
+                {showRiskLayer && qismBoundaries && (
                   <GeoJSON
+                    data={qismBoundaries}
+                    style={(feature) => {
+                      const districtName = feature?.properties?.nameAr || feature?.properties?.nameEn || "";
+                      const districtRisk = getDistrictRiskLevel(
+                        districtName,
+                        filteredFacilities,
+                        modelHighRiskAreas,
+                        normalizeRiskValue,
+                        getRiskPriority,
+                      );
+
+                      return {
+                        ...getDistrictBoundaryStyle(districtName),
+                        weight: districtRisk ? 3.2 : 2.2,
+                        fillOpacity: districtRisk ? 0.28 : 0.14,
+                        opacity: districtRisk ? 0.96 : 0.78,
+                      };
+                    }}
+                    onEachFeature={(feature, layer) => {
+                      layer.bindPopup(getQismPopupHtml(feature));
+                    }}
+                  />
+                )}
+              </LayerGroup>
+              
+              <LayerGroup key={`${filterStateKey}-landuse`}>
+                {showLandUseLayer && landUseLayerData && landUseLayerData.features.length > 0 && (
+                  <GeoJSON
+                    key={`${filterStateKey}-landuse-geojson`}
                     data={landUseLayerData}
                     style={getLandUseStyle}
                     onEachFeature={(feature, layer) => {
@@ -920,11 +1038,9 @@ const futurePlaning = () => {
                   />
                 )}
               </LayerGroup>
-            </LayersControl.Overlay>
-            
-            <LayersControl.Overlay checked name="نموذج ارتفاع سطح الأرض (DEM)">
+              
               <LayerGroup key="dem-layer">
-                {demData && demData.features && demData.features.length > 0 && (
+                {showDemLayer && demData && demData.features && demData.features.length > 0 && (
                   <GeoJSON
                     data={demData}
                     style={getDemStyle}
@@ -935,7 +1051,6 @@ const futurePlaning = () => {
                   />
                 )}
               </LayerGroup>
-            </LayersControl.Overlay>
             
             {shouldRenderFacilityIcons && (
               <>

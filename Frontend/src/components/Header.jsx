@@ -43,53 +43,48 @@ const Header = ({ active = "home" }) => {
         <nav className="flex items-center gap-6">
           <Link
             to="/home"
-            className={`text-sm font-medium transition-colors ${
-              active === "home"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                : "text-gray-500 hover:text-blue-600"
-            }`}
+            className={`text-sm font-medium transition-colors ${active === "home"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+              : "text-gray-500 hover:text-blue-600"
+              }`}
           >
             الرئيسية
           </Link>
           <Link
             to="/argentIntervention"
-            className={`text-sm font-medium transition-colors ${
-              active === "argentIntervention"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                : "text-gray-500 hover:text-blue-600"
-            }`}
+            className={`text-sm font-medium transition-colors ${active === "argentIntervention"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+              : "text-gray-500 hover:text-blue-600"
+              }`}
           >
-            تدخلات عاجله
+            تخطيط مستقبلي
           </Link>
 
           <Link
             to="/futurePlaning"
-            className={`text-sm font-medium transition-colors ${
-              active === "futurePlaning"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                : "text-gray-500 hover:text-blue-600"
-            }`}
+            className={`text-sm font-medium transition-colors ${active === "futurePlaning"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+              : "text-gray-500 hover:text-blue-600"
+              }`}
           >
-            تخطيط مستقبلي
+            تدخلات العاجله
           </Link>
           <Link
             to="/Analytics"
-            className={`text-sm font-medium transition-colors ${
-              active === "Analytics"
-                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                : "text-gray-500 hover:text-blue-600"
-            }`}
+            className={`text-sm font-medium transition-colors ${active === "Analytics"
+              ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+              : "text-gray-500 hover:text-blue-600"
+              }`}
           >
             التحليلات
           </Link>
           {user?.roles?.includes("Admin") && (
             <Link
               to="/admin"
-              className={`text-sm font-medium transition-colors ${
-                active === "admin"
-                  ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
-                  : "text-gray-500 hover:text-blue-600"
-              }`}
+              className={`text-sm font-medium transition-colors ${active === "admin"
+                ? "text-blue-600 border-b-2 border-blue-600 pb-1 font-bold"
+                : "text-gray-500 hover:text-blue-600"
+                }`}
             >
               لوحة المسؤول
             </Link>

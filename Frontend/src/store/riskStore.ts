@@ -61,7 +61,7 @@ export const useRiskStore = create<RiskState>((set, get) => ({
     try {
       const [dashboard, map, population, infrastructure] = await Promise.all([
         dataService.getDashboardData(scenario, year),
-        dataService.getMapRiskData(scenario, year),
+        dataService.getMapRiskData(),
         dataService.getPopulationRisk(scenario, year),
         dataService.getInfrastructureRisk(scenario, year),
       ]);

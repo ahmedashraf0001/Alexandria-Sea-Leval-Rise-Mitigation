@@ -31,6 +31,9 @@ import {
   ShieldCheck,
   Landmark,
   Building2,
+  Layers,
+  Map as MapIcon,
+  MapPin,
 } from "lucide-react";
 import { dataService } from "../services/dataService";
 import { useToast } from "../contexts/useToast";
@@ -72,6 +75,14 @@ const getRiskColor = (risk) => {
   if (risk === "high") return "#F97316";
   if (risk === "medium") return "#EAB308";
   return "#22C55E";
+};
+
+const getRiskLabelAr = (risk) => {
+  if (risk === "extreme") return "شديد";
+  if (risk === "high") return "مرتفع";
+  if (risk === "medium") return "متوسط";
+  if (risk === "low") return "منخفض";
+  return "غير متوفر";
 };
 
 const getImpactRadiusMeters = (risk) => {
@@ -126,14 +137,14 @@ const getLandUseStyle = (feature) => {
 
 // Elevation color ramp for the DEM layer (meters above/below sea level)
 const DEM_COLOR_STOPS = [
-  { max: 0, color: "#08306b" }, // below sea level - deep blue
-  { max: 0.5, color: "#2171b5" },
-  { max: 1, color: "#6baed6" },
-  { max: 2, color: "#a6d96a" },
-  { max: 3, color: "#fee08b" },
-  { max: 5, color: "#fdae61" },
-  { max: 8, color: "#f46d43" },
-  { max: Infinity, color: "#a50026" }, // highest ground - dark red
+  { max: 0, color: "#03045e" }, // below sea level - dark navy
+  { max: 0.5, color: "#023e8a" },
+  { max: 1, color: "#0077b6" },
+  { max: 2, color: "#00b4d8" },
+  { max: 3, color: "#90e0ef" },
+  { max: 5, color: "#c77dff" },
+  { max: 8, color: "#9d4edd" },
+  { max: Infinity, color: "#5a189a" }, // highest ground - deep purple
 ];
 
 const getElevationColor = (elevation) => {
@@ -169,14 +180,14 @@ const getDemPopupHtml = (feature) => {
 };
 
 const DEM_LEGEND_ITEMS = [
-  { label: "أقل من 0 م (تحت سطح البحر)", color: "#08306b" },
-  { label: "0 - 0.5 م", color: "#2171b5" },
-  { label: "0.5 - 1 م", color: "#6baed6" },
-  { label: "1 - 2 م", color: "#a6d96a" },
-  { label: "2 - 3 م", color: "#fee08b" },
-  { label: "3 - 4 م", color: "#fdae61" },
-  { label: "4 - 5 م", color: "#f46d43" },
-  { label: "أكثر من 5 م", color: "#a50026" },
+  { label: "أقل من 0 م (تحت سطح البحر)", color: "#03045e" },
+  { label: "0 - 0.5 م", color: "#023e8a" },
+  { label: "0.5 - 1 م", color: "#0077b6" },
+  { label: "1 - 2 م", color: "#00b4d8" },
+  { label: "2 - 3 م", color: "#90e0ef" },
+  { label: "3 - 4 م", color: "#c77dff" },
+  { label: "4 - 5 م", color: "#9d4edd" },
+  { label: "أكثر من 5 م", color: "#5a189a" },
 ];
 
 const getLandUsePopupHtml = (feature) => {
@@ -283,8 +294,12 @@ const argentIntervention = () => {
     LAND_USE_CATEGORY_OPTIONS.map((option) => option.key),
   );
   const [isLoading, setIsLoading] = useState(false);
+  const [isApiDataUnavailable, setIsApiDataUnavailable] = useState(false);
   const [mapRenderVersion, setMapRenderVersion] = useState(0);
   const [showFacilityIcons, setShowFacilityIcons] = useState(false);
+  const [showRiskLayer, setShowRiskLayer] = useState(true);
+  const [showDemLayer, setShowDemLayer] = useState(false);
+  const [showLandUseLayer, setShowLandUseLayer] = useState(true);
 
   useEffect(() => {
     setShowFacilityIcons(false);
@@ -398,12 +413,14 @@ const argentIntervention = () => {
         if (isMounted) {
           setFacilities(facilityData);
           setModelHighRiskAreas(dashboardData?.highRiskAreas || []);
+          setIsApiDataUnavailable(false);
         }
       } catch (error) {
         console.error("Failed to fetch infrastructure data", error);
         if (isMounted) {
           setFacilities([]);
           setModelHighRiskAreas([]);
+          setIsApiDataUnavailable(true);
           addToast("تعذر تحميل بيانات البنية التحتية", "error");
         }
       } finally {
@@ -641,6 +658,16 @@ const argentIntervention = () => {
     };
   };
 
+  const getDistrictNameFromFeature = (feature) => {
+    const properties = feature?.properties || {};
+    return (
+      properties.adm2_name1 ||
+      properties.adm2_ref_name ||
+      properties.adm2_name ||
+      ""
+    );
+  };
+
   const toCsvCell = (value) => {
     const text = String(value ?? "");
     return `"${text.replaceAll('"', '""')}"`;
@@ -871,6 +898,53 @@ const argentIntervention = () => {
                 تحميل التقرير
               </button>
             </div>
+
+            <div className="flex gap-2 pointer-events-auto mt-3 bg-white/90 p-2 rounded-xl backdrop-blur-md border border-gray-200 shadow-md w-fit">
+              <button
+                onClick={() => setShowRiskLayer(!showRiskLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showRiskLayer 
+                    ? "bg-red-50 text-red-700 border border-red-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <Layers className="w-4 h-4" />
+                مستوى الخطر
+              </button>
+              <button
+                onClick={() => setShowDemLayer(!showDemLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showDemLayer 
+                    ? "bg-purple-50 text-purple-700 border border-purple-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <MapIcon className="w-4 h-4" />
+                الارتفاعات (DEM)
+              </button>
+              <button
+                onClick={() => setShowLandUseLayer(!showLandUseLayer)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showLandUseLayer 
+                    ? "bg-green-50 text-green-700 border border-green-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <Building2 className="w-4 h-4" />
+                استخدامات الأراضي
+              </button>
+              <button
+                onClick={() => setShowFacilityIcons(!showFacilityIcons)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+                  showFacilityIcons 
+                    ? "bg-blue-50 text-blue-700 border border-blue-200" 
+                    : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+                }`}
+              >
+                <MapPin className="w-4 h-4" />
+                مواقع المنشآت
+              </button>
+            </div>
           </div>
 
           {isLoading && (
@@ -901,66 +975,83 @@ const argentIntervention = () => {
                   maxZoom={19}
                 />
               </LayersControl.BaseLayer>
-              <LayersControl.Overlay checked name="حدود الأقسام الإدارية (ADM2)">
-                <LayerGroup key={`${filterStateKey}-admin2`}>
-                  {admin2Boundaries && (
-                    <GeoJSON
-                      data={admin2Boundaries}
-                      style={{
-                        color: "#2563eb",
-                        weight: 1.5,
-                        fillColor: "#3b82f6",
-                        fillOpacity: 0.12,
-                      }}
-                      onEachFeature={(feature, layer) => {
-                        const properties = feature?.properties || {};
-                        const name =
-                          properties.adm2_name1 ||
-                          properties.adm2_ref_name ||
-                          properties.adm2_name ||
-                          "قسم";
-                        layer.bindPopup(`
-                          <div dir="rtl" style="min-width:180px">
-                            <strong>${name}</strong><br/>
-                            ${properties.adm1_name1 || properties.adm1_name || ""}<br/>
-                            ${properties.adm0_name1 || properties.adm0_name || ""}
-                          </div>
-                        `);
-                      }}
-                    />
-                  )}
-                </LayerGroup>
-              </LayersControl.Overlay>
 
-              <LayersControl.Overlay checked name="بيانات الاستخدام الأرضي">
-                <LayerGroup key={`${filterStateKey}-landuse`}>
-                  {landUseLayerData && landUseLayerData.features.length > 0 && (
-                    <GeoJSON
-                      key={`${filterStateKey}-landuse-geojson`}
-                      data={landUseLayerData}
-                      style={getLandUseStyle}
-                      onEachFeature={(feature, layer) => {
-                        layer.bindPopup(getLandUsePopupHtml(feature));
-                      }}
-                    />
-                  )}
-                </LayerGroup>
-              </LayersControl.Overlay>
+              {/* External Custom Toggled Layers */}
+              <LayerGroup key={`${filterStateKey}-admin2`}>
+                {showRiskLayer && admin2Boundaries && (
+                  <GeoJSON
+                    data={admin2Boundaries}
+                    style={(feature) => {
+                      if (isApiDataUnavailable) {
+                        return {
+                          color: "#64748b",
+                          weight: 1.1,
+                          fillColor: "#94a3b8",
+                          fillOpacity: 0.08,
+                        };
+                      }
 
-              <LayersControl.Overlay checked name="نموذج ارتفاع سطح الأرض (DEM)">
-                <LayerGroup key="dem-layer">
-                  {demData && demData.features && demData.features.length > 0 && (
-                    <GeoJSON
-                      data={demData}
-                      style={getDemStyle}
-                      renderer={L.canvas({ padding: 0.5 })}
-                      onEachFeature={(feature, layer) => {
-                        layer.bindPopup(getDemPopupHtml(feature));
-                      }}
-                    />
-                  )}
-                </LayerGroup>
-              </LayersControl.Overlay>
+                      const districtName = getDistrictNameFromFeature(feature);
+                      return getDistrictBoundaryStyle(districtName);
+                    }}
+                    onEachFeature={(feature, layer) => {
+                      const properties = feature?.properties || {};
+                      const name =
+                        properties.adm2_name1 ||
+                        properties.adm2_ref_name ||
+                        properties.adm2_name ||
+                        "قسم";
+
+                      const districtRisk = isApiDataUnavailable
+                        ? null
+                        : getDistrictRiskLevel(
+                            name,
+                            filteredFacilities,
+                            modelHighRiskAreas,
+                            normalizeRiskValue,
+                            getRiskPriority,
+                          );
+                      const districtFacilities = getFacilitiesInDistrict(name, filteredFacilities);
+
+                      layer.bindPopup(`
+                        <div dir="rtl" style="min-width:180px">
+                          <strong>${name}</strong><br/>
+                          ${properties.adm1_name1 || properties.adm1_name || ""}<br/>
+                          ${properties.adm0_name1 || properties.adm0_name || ""}<br/>
+                          <strong>مستوى الخطر:</strong> ${getRiskLabelAr(districtRisk)}<br/>
+                          <strong>المنشآت المرئية:</strong> ${districtFacilities.length}
+                        </div>
+                      `);
+                    }}
+                  />
+                )}
+              </LayerGroup>
+
+              <LayerGroup key={`${filterStateKey}-landuse`}>
+                {showLandUseLayer && landUseLayerData && landUseLayerData.features.length > 0 && (
+                  <GeoJSON
+                    key={`${filterStateKey}-landuse-geojson`}
+                    data={landUseLayerData}
+                    style={getLandUseStyle}
+                    onEachFeature={(feature, layer) => {
+                      layer.bindPopup(getLandUsePopupHtml(feature));
+                    }}
+                  />
+                )}
+              </LayerGroup>
+
+              <LayerGroup key="dem-layer">
+                {showDemLayer && demData && demData.features && demData.features.length > 0 && (
+                  <GeoJSON
+                    data={demData}
+                    style={getDemStyle}
+                    renderer={L.canvas({ padding: 0.5 })}
+                    onEachFeature={(feature, layer) => {
+                      layer.bindPopup(getDemPopupHtml(feature));
+                    }}
+                  />
+                )}
+              </LayerGroup>
 
               {shouldRenderFacilityIcons && (
                 <>
@@ -1015,6 +1106,11 @@ const argentIntervention = () => {
           </MapContainer>
 
           <div className="absolute bottom-4 right-4 z-[400] bg-white/95 backdrop-blur-md border border-gray-200 rounded-xl p-3 shadow-lg text-xs text-gray-700 space-y-2 max-w-[250px]">
+            {isApiDataUnavailable && (
+              <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-md px-2 py-1 text-[10px] leading-4">
+                تعذر جلب بيانات المخاطر من الخادم. يتم عرض الطبقات المحلية فقط بدون تلوين مخاطر حي.
+              </div>
+            )}
             <div className="font-bold text-gray-900">ملخص الخريطة</div>
             <div className="flex justify-between">
               <span>منشآت مرئية</span>

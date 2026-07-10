@@ -19,10 +19,15 @@ export interface DashboardData {
 }
 
 export interface MapData {
+  projectedSeaLevelMm: number;
   floodedAreaKm2: number;
   riskLevel: string;
   colorCode: string;
   description: string;
+  zones: {
+    name: string;
+    thresholdMm: number;
+  }[];
 }
 
 export interface PopulationData {
@@ -449,10 +454,8 @@ export const dataService = {
     );
   },
 
-  getMapRiskData: async (scenario: ScenarioCode, year: Year): Promise<MapData> => {
-    const payload = await requestJson<MapData>(
-      `/map-risk?scenario=${scenario}&year=${year}`,
-    );
+  getMapRiskData: async (): Promise<MapData> => {
+    const payload = await requestJson<MapData>("/map-risk");
 
     const bucket = toRiskBucket(payload.riskLevel);
     const riskLevel = toRiskLabel(bucket);

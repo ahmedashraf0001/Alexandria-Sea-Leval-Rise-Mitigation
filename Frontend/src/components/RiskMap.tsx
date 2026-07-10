@@ -15,6 +15,7 @@ import {
 import { useRiskStore } from "../store/riskStore";
 import L, { LatLngExpression } from "leaflet";
 import { twMerge } from "tailwind-merge";
+import { Layers, Map as MapIcon } from "lucide-react";
 
 // Enhanced GeoJSON-like polygons for Alexandria districts hugging the coastline for a more professional look
 const DISTRICTS: { name: string; position: [number, number][] }[] = [
@@ -147,6 +148,7 @@ export const RiskMap = ({
     useRiskStore();
 
   const [showDem, setShowDem] = useState(false);
+  const [showRiskLayer, setShowRiskLayer] = useState(true);
   const [demData, setDemData] = useState<any>(null);
   const [loadingDem, setLoadingDem] = useState(false);
 
@@ -173,12 +175,14 @@ export const RiskMap = ({
   const canvasRenderer = useMemo(() => L.canvas(), []);
 
   const getDemColor = (elev: number) => {
-    if (elev <= 0) return "#2563EB"; // Blue (below or at sea level)
-    if (elev <= 0.5) return "#EF4444"; // Red (very low, critical risk)
-    if (elev <= 1.0) return "#F97316"; // Orange (low, high risk)
-    if (elev <= 2.0) return "#FBBF24"; // Yellow (medium, moderate risk)
-    if (elev <= 5.0) return "#34D399"; // Light Green (safe, low risk)
-    return "#059669"; // Green (high ground, safe)
+    if (elev <= 0) return "#03045e";
+    if (elev <= 0.5) return "#023e8a";
+    if (elev <= 1.0) return "#0077b6";
+    if (elev <= 2.0) return "#00b4d8";
+    if (elev <= 3.0) return "#90e0ef";
+    if (elev <= 5.0) return "#c77dff";
+    if (elev <= 8.0) return "#9d4edd";
+    return "#5a189a";
   };
 
   const demStyle = (feature: any) => {
@@ -219,17 +223,25 @@ export const RiskMap = ({
     return null;
   };
 
-  const normalizeRisk = (
-    riskLevel?: string,
-  ): "critical" | "high" | "medium" | "low" => {
-    const value = (riskLevel || "").trim().toLowerCase();
+  type RiskLevel = "critical" | "high" | "medium" | "low";
+
+  const normalizeRisk = (riskLevel?: string): RiskLevel => {
+    const value = String(riskLevel || "").trim().toLowerCase();
+
+    if (!value) return "low";
 
     if (
       value.includes("critical") ||
       value.includes("extreme") ||
       value.includes("severe") ||
+      value.includes("catastrophic") ||
       value.includes("كارث") ||
-      value.includes("شديد")
+      value.includes("شديد") ||
+      value.includes("حرج") ||
+      value.includes("very high") ||
+      value.includes("very-high") ||
+      value.includes("جدًا") ||
+      value.includes("جدا")
     ) {
       return "critical";
     }
@@ -238,29 +250,43 @@ export const RiskMap = ({
       return "high";
     }
 
-    if (value.includes("medium") || value.includes("moderate") || value.includes("متوسط")) {
+    if (
+      value.includes("medium") ||
+      value.includes("moderate") ||
+      value.includes("متوسط") ||
+      value.includes("warning")
+    ) {
       return "medium";
+    }
+
+    if (
+      value.includes("low") ||
+      value.includes("منخفض") ||
+      value.includes("stable") ||
+      value.includes("safe")
+    ) {
+      return "low";
     }
 
     return "low";
   };
 
-  const riskColor = (risk: "critical" | "high" | "medium" | "low") => {
-    if (risk === "critical") return "#0D47A1";
-    if (risk === "high") return "#1976D2";
-    if (risk === "medium") return "#64B5F6";
-    return "#E3F2FD";
+  const riskColor = (risk: RiskLevel) => {
+    if (risk === "critical") return "#EF4444";
+    if (risk === "high") return "#F97316";
+    if (risk === "medium") return "#EAB308";
+    return "#22C55E";
   };
 
-  const districtPathOptions = (risk: "critical" | "high" | "medium" | "low") => {
+  const districtPathOptions = (risk: RiskLevel) => {
     const baseOptions = { lineJoin: "round" as const, lineCap: "round" as const, smoothFactor: 1.5 };
     
     if (risk === "critical") {
       return {
         ...baseOptions,
-        color: "#0A3780",
-        fillColor: "#0D47A1",
-        fillOpacity: 0.35,
+        color: "#B91C1C",
+        fillColor: "#EF4444",
+        fillOpacity: 0.32,
         weight: 2.8,
         dashArray: "8, 8",
         opacity: 0.95,
@@ -270,8 +296,8 @@ export const RiskMap = ({
     if (risk === "high") {
       return {
         ...baseOptions,
-        color: "#135BA1",
-        fillColor: "#1976D2",
+        color: "#C2410C",
+        fillColor: "#F97316",
         fillOpacity: 0.28,
         weight: 2.4,
         opacity: 0.92,
@@ -281,8 +307,8 @@ export const RiskMap = ({
     if (risk === "medium") {
       return {
         ...baseOptions,
-        color: "#4A8ABF",
-        fillColor: "#64B5F6",
+        color: "#B45309",
+        fillColor: "#EAB308",
         fillOpacity: 0.22,
         weight: 2.0,
         opacity: 0.9,
@@ -291,15 +317,15 @@ export const RiskMap = ({
 
     return {
       ...baseOptions,
-      color: "#A6C1DB",
-      fillColor: "#E3F2FD",
+      color: "#166534",
+      fillColor: "#22C55E",
       fillOpacity: 0.18,
       weight: 1.8,
       opacity: 0.88,
     };
   };
 
-  const popupRiskBadgeClasses = (risk: "critical" | "high" | "medium" | "low") => {
+  const popupRiskBadgeClasses = (risk: RiskLevel) => {
     if (risk === "critical") return "bg-red-100 text-red-700";
     if (risk === "high") return "bg-orange-100 text-orange-700";
     if (risk === "medium") return "bg-yellow-100 text-yellow-700";
@@ -411,12 +437,33 @@ export const RiskMap = ({
   };
 
   return (
-    <div
-      className={twMerge(
-        "h-[500px] w-full bg-gray-100 rounded-xl overflow-hidden shadow-lg border border-gray-200 relative z-0",
-        className,
-      )}
-    >
+    <div className={twMerge("relative w-full h-full bg-slate-50 rounded-xl overflow-hidden", className)}>
+      
+      <div className="absolute top-4 left-4 z-[400] flex gap-2 pointer-events-auto bg-white/90 p-2 rounded-xl backdrop-blur-md border border-gray-200 shadow-md">
+        <button
+          onClick={() => setShowRiskLayer(!showRiskLayer)}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+            showRiskLayer 
+              ? "bg-red-50 text-red-700 border border-red-200" 
+              : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+          }`}
+        >
+          <Layers className="w-4 h-4" />
+          مستوى الخطر
+        </button>
+        <button
+          onClick={() => setShowDem(!showDem)}
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-[12px] font-bold transition-all ${
+            showDem 
+              ? "bg-purple-50 text-purple-700 border border-purple-200" 
+              : "bg-white text-gray-500 hover:bg-gray-50 border border-transparent"
+          }`}
+        >
+          <MapIcon className="w-4 h-4" />
+          الارتفاعات (DEM)
+        </button>
+      </div>
+
       {isLoading && (
         <div className="absolute inset-0 bg-white/50 z-[1000] flex items-center justify-center backdrop-blur-sm">
           <span className="text-blue-600 font-bold loading-text">
@@ -476,8 +523,7 @@ export const RiskMap = ({
         zoomControl={false}
       >
         <ZoomControl position="bottomleft" />
-        <MapEvents />
-
+        
         <LayersControl position="topright">
           <LayersControl.BaseLayer checked name="خريطة الطرق">
             <TileLayer
@@ -493,103 +539,117 @@ export const RiskMap = ({
             />
           </LayersControl.BaseLayer>
 
-          <LayersControl.Overlay checked name="قطاعات الأحياء المهددة">
-            <LayerGroup>
-              {districtMetricsWithRank.map((district) => (
-                <Polygon
-                  key={`poly-${district.name}`}
-                  positions={district.position}
-                  pathOptions={districtPathOptions(district.risk)}
-                >
-                  <Popup className="font-arabic custom-popup">
-                    <div className="p-1 min-w-[220px]" dir="rtl">
-                      <div className="flex justify-between items-start mb-2 gap-2">
-                        <div>
-                          <h3 className="font-bold text-gray-900 text-base">{district.name}</h3>
-                          <span className="text-[11px] text-gray-500">
-                            تقييم مخاطر المناطق الساحلية
-                          </span>
-                        </div>
-                        <span
-                          className={`px-2 py-0.5 rounded text-[10px] font-bold ${popupRiskBadgeClasses(
-                            district.risk,
-                          )}`}
-                        >
+          <LayerGroup>
+            {showRiskLayer && districtMetricsWithRank.map((district) => (
+              <Polygon
+                key={`poly-${district.name}`}
+                positions={district.position}
+                pathOptions={districtPathOptions(district.risk)}
+              >
+                <Popup className="font-arabic custom-popup">
+                  <div className="p-1 min-w-[220px]" dir="rtl">
+                    <div className="flex justify-between items-start mb-2 gap-2">
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-base">{district.name}</h3>
+                        <span className="text-[11px] text-gray-500">
+                          تقييم مخاطر المناطق الساحلية
+                        </span>
+                      </div>
+                      <span
+                        className={`px-2 py-0.5 rounded text-[10px] font-bold ${popupRiskBadgeClasses(
+                          district.risk,
+                        )}`}
+                      >
+                        {district.riskLabel}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 mb-3 bg-gray-50 p-2 rounded-lg border border-gray-100">
+                      <div>
+                        <span className="text-[10px] text-gray-500 block">السكان المعرضون</span>
+                        <span className="font-bold text-sm text-gray-800">
+                          {district.exposedPopulation.toLocaleString("ar-EG")}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-gray-500 block">المساحة المغمورة</span>
+                        <span className="font-bold text-sm text-gray-800">
+                          {district.floodedAreaKm2.toFixed(1)} كم²
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-gray-500 block">الترتيب</span>
+                        <span className="font-bold text-sm text-gray-800">
+                          #{district.rank} / {districtMetricsWithRank.length}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-gray-500 block">درجة الخطورة</span>
+                        <span className="font-bold text-sm" style={{ color: district.color }}>
                           {district.riskLabel}
                         </span>
                       </div>
+                    </div>
 
-                      <div className="grid grid-cols-2 gap-2 mb-3 bg-gray-50 p-2 rounded-lg border border-gray-100">
-                        <div>
-                          <span className="text-[10px] text-gray-500 block">السكان المعرضون</span>
-                          <span className="font-bold text-sm text-gray-800">
-                            {district.exposedPopulation.toLocaleString("ar-EG")}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-[10px] text-gray-500 block">المساحة المغمورة</span>
-                          <span className="font-bold text-sm text-gray-800">
-                            {district.floodedAreaKm2.toFixed(1)} كم²
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-[10px] text-gray-500 block">الترتيب</span>
-                          <span className="font-bold text-sm text-gray-800">
-                            #{district.rank} / {districtMetricsWithRank.length}
-                          </span>
-                        </div>
-                        <div>
-                          <span className="text-[10px] text-gray-500 block">درجة الخطورة</span>
-                          <span className="font-bold text-sm" style={{ color: district.color }}>
-                            {district.riskLabel}
-                          </span>
-                        </div>
+                    {getFacilitiesInDistrict(district.name).length > 0 && (
+                      <div className="mb-3 p-2 bg-red-50 border border-red-100 rounded-lg">
+                        <span className="text-[10px] text-red-600 font-bold block mb-1">
+                          مرافق حيوية مهددة
+                        </span>
+                        <ul className="text-[11px] text-gray-700 list-disc list-inside px-3 space-y-0.5">
+                          {getFacilitiesInDistrict(district.name).map((fac, idx) => (
+                              <li key={idx}>{fac.name} - <span className="text-gray-500">{fac.qism}</span></li>
+                          ))}
+                        </ul>
                       </div>
+                    )}
 
-                      {getFacilitiesInDistrict(district.name).length > 0 && (
-                        <div className="mb-3 p-2 bg-red-50 border border-red-100 rounded-lg">
-                          <span className="text-[10px] text-red-600 font-bold block mb-1">
-                            مرافق حيوية مهددة
-                          </span>
-                          <ul className="text-[11px] text-gray-700 list-disc list-inside px-3 space-y-0.5">
-                            {getFacilitiesInDistrict(district.name).map((fac, idx) => (
-                                <li key={idx}>{fac.name} - <span className="text-gray-500">{fac.qism}</span></li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      <div className="flex justify-between text-[11px] text-gray-600 bg-white border border-gray-100 rounded-lg p-2 leading-5">
-                        <div>
-                          السيناريو: <span className="font-bold text-gray-800">{selectedScenario}</span>
-                        </div>
-                        <div>
-                          السنة: <span className="font-bold text-gray-800">{selectedYear}</span>
-                        </div>
+                    <div className="flex justify-between text-[11px] text-gray-600 bg-white border border-gray-100 rounded-lg p-2 leading-5">
+                      <div>
+                        السيناريو: <span className="font-bold text-gray-800">{selectedScenario}</span>
+                      </div>
+                      <div>
+                        السنة: <span className="font-bold text-gray-800">{selectedYear}</span>
                       </div>
                     </div>
-                  </Popup>
-                </Polygon>
-              ))}
-            </LayerGroup>
-          </LayersControl.Overlay>
+                  </div>
+                </Popup>
+              </Polygon>
+            ))}
+          </LayerGroup>
 
           <LayersControl.Overlay checked name="النقاط الحرجة (المرافق)">
             <LayerGroup>
               {infrastructureData?.facilities?.map((facility, idx) => {
                 if (!facility.lat || !facility.lng) return null;
 
-                const isExtreme = facility.riskLevel === "شديد" || facility.riskLevel === "كارثي";
-                const isHigh = facility.riskLevel === "مرتفع جدًا" || facility.riskLevel === "مرتفع";
+                const facilityRisk = normalizeRisk(
+                  facility.riskLevel || facility.riskLabel || facility.risk || facility.status,
+                );
 
-                const color = isExtreme ? "#DC2626" : isHigh ? "#FB923C" : "#FBBF24";
-                const fillColor = isExtreme ? "#EF4444" : isHigh ? "#F97316" : "#F59E0B";
+                const color =
+                  facilityRisk === "critical"
+                    ? "#B91C1C"
+                    : facilityRisk === "high"
+                      ? "#C2410C"
+                      : facilityRisk === "medium"
+                        ? "#B45309"
+                        : "#166534";
+
+                const fillColor =
+                  facilityRisk === "critical"
+                    ? "#EF4444"
+                    : facilityRisk === "high"
+                      ? "#FB923C"
+                      : facilityRisk === "medium"
+                        ? "#FBBF24"
+                        : "#22C55E";
 
                 return (
                   <CircleMarker
                     key={`facility-${facility.id || idx}`}
                     center={[facility.lat, facility.lng]}
-                    radius={8}
+                    radius={facilityRisk === "critical" ? 8 : facilityRisk === "high" ? 7 : 6}
                     pathOptions={{ color, fillColor, fillOpacity: 0.8, weight: 2 }}
                   >
                     <Tooltip direction="top" offset={[0, -10]} opacity={1}>
@@ -603,17 +663,15 @@ export const RiskMap = ({
             </LayerGroup>
           </LayersControl.Overlay>
 
-          <LayersControl.Overlay name="الارتفاعات الرقمية (DEM)">
-            <LayerGroup>
-              {demData && (
-                <GeoJSON
-                  data={demData}
-                  style={demStyle}
-                  onEachFeature={onEachDemFeature}
-                />
-              )}
-            </LayerGroup>
-          </LayersControl.Overlay>
+          <LayerGroup>
+            {showDem && demData && (
+              <GeoJSON
+                data={demData}
+                style={demStyle}
+                onEachFeature={onEachDemFeature}
+              />
+            )}
+          </LayerGroup>
         </LayersControl>
       </MapContainer>
     </div>

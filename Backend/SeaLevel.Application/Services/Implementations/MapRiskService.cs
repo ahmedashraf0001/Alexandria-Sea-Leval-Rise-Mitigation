@@ -8,6 +8,7 @@ using SeaLevel.Core.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
 using System;
 
 namespace SeaLevel.Application.Services.Implementations;
@@ -17,33 +18,25 @@ public class MapRiskService : IMapRiskService
     private readonly INasaPowerClient _nasaPowerClient;
     private readonly IMlForecastClient _mlForecastClient;
     private readonly IForecastLogRepository _forecastLogRepository;
-    private readonly ILongTermScenarioRepository _scenarioRepository;
     private readonly ILandUseFeatureRepository _landUseRepository;
 
     public MapRiskService(
         INasaPowerClient nasaPowerClient,
         IMlForecastClient mlForecastClient,
         IForecastLogRepository forecastLogRepository,
-        ILongTermScenarioRepository scenarioRepository,
         ILandUseFeatureRepository landUseRepository)
     {
         _nasaPowerClient = nasaPowerClient;
         _mlForecastClient = mlForecastClient;
         _forecastLogRepository = forecastLogRepository;
-        _scenarioRepository = scenarioRepository;
         _landUseRepository = landUseRepository;
     }
 
     public async Task<MapRiskResponse> GetMapRiskAsync(
-        string scenario,
-        int year,
         DateTime? from = null,
         DateTime? to = null,
         CancellationToken cancellationToken = default)
     {
-        RiskMappingHelper.ValidateScenario(scenario);
-        RiskMappingHelper.ValidateYear(year);
-
         DateTime fromDate = from ?? DateTime.UtcNow.AddDays(-14);
         DateTime toDate = to ?? DateTime.UtcNow;
 
@@ -58,31 +51,36 @@ public class MapRiskService : IMapRiskService
 
         double basePredictedSeaLevel = RiskMappingHelper.GetBasePredictedSeaLevel(forecast);
 
-        // Fetch rise parameters from DB
-        var scenarioParam = await _scenarioRepository.GetByScenarioAndYearAsync(scenario, year, cancellationToken);
-        double riseMm = scenarioParam != null ? scenarioParam.RiseInMillimeters : 0.0;
-        double adjustedPredictedSeaLevel = basePredictedSeaLevel + riseMm;
-        await _forecastLogRepository.AddAsync(new ForecastLog
-        {
-            UserId = "System",
-            Scenario = scenario,
-            Year = year,
-            RequestedAt = DateTime.UtcNow,
-            BaselineSeaLevel = basePredictedSeaLevel,
-            ProjectedSeaLevel = adjustedPredictedSeaLevel
-        });
-
 
         // Fetch zones from DB
         var dbFeatures = await _landUseRepository.GetAllAsync(cancellationToken);
-        var projectionResult = ProjectionEngine.Calculate(adjustedPredictedSeaLevel, dbFeatures);
+        var projectionResult = ProjectionEngine.Calculate(basePredictedSeaLevel);
+
+        var zones = dbFeatures
+            .Where(feature => !string.IsNullOrWhiteSpace(feature.District))
+            .GroupBy(feature => feature.District.Trim(), StringComparer.OrdinalIgnoreCase)
+            .Select(group => new ZoneThresholdDto
+            {
+                Name = group.Key,
+                ThresholdMm = group.Min(feature => feature.ThresholdMm)
+            })
+            .OrderBy(zone => zone.ThresholdMm)
+            .ThenBy(zone => zone.Name, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var activeZones = zones
+            .Where(zone => basePredictedSeaLevel >= zone.ThresholdMm)
+            .Select(zone => zone.Name)
+            .ToList();
 
         return new MapRiskResponse
         {
+            ProjectedSeaLevelMm = Math.Round(basePredictedSeaLevel, 2),
             FloodedAreaKm2 = Math.Round(projectionResult.FloodedAreaKm2, 2),
             RiskLevel = projectionResult.RiskLevel,
             ColorCode = projectionResult.ColorCode,
-            Description = projectionResult.RiskDescription
+            Description = projectionResult.RiskDescription,
+            Zones = zones
         };
     }
 }
